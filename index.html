@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEN YI CHOU — Portfolio 2026</title>
+  <meta name="description" content="周汶誼 — 橫跨藝術、設計與專案企劃的作品集。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Loading overlay -->
+  <div class="loader" id="loader">
+    <div class="loader-name" aria-hidden="true"></div>
+    <div class="loader-count"><span id="loaderCount">0</span></div>
+  </div>
+
+  <!-- Page transition wipe -->
+  <div class="wipe" id="wipe"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor">
+    <span class="cursor-label" id="cursorLabel">VIEW</span>
+  </div>
+
+  <!-- Back button (hidden on home) -->
+  <button class="back-btn" id="backBtn" aria-label="返回">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M10.5 3L5.5 8L10.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav" aria-label="主選單">
+    <a href="#/" data-nav="home">HOME</a>
+    <a href="#/projects" data-nav="projects">PROJECTS</a>
+    <a href="#/about" data-nav="about">ABOUT</a>
+    <a href="#/contact" data-nav="contact">CONTACT</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============ HOME ============ -->
+    <section class="view view-home" data-view="home">
+      <header class="home-head">
+        <p class="home-eyebrow">ART / DESIGN / PROJECT</p>
+        <h1 class="home-title">WEN YI<br>CHOU</h1>
+      </header>
+
+      <canvas class="bow-canvas" id="bowCanvas" aria-label="蝴蝶結粒子動畫" role="img"></canvas>
+
+      <footer class="home-foot">
+        <div class="foot-item">
+          <p class="foot-label">BASE</p>
+          <p class="foot-value">TAIPEI, TAIWAN</p>
+        </div>
+        <div class="foot-item">
+          <p class="foot-label">FOCUS</p>
+          <p class="foot-value">PAINTING / DESIGN /<br>PHOTOGRAPHY</p>
+        </div>
+        <div class="foot-item">
+          <p class="foot-label">INDEX</p>
+          <p class="foot-value">PORTFOLIO 2026</p>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="view view-projects" data-view="projects">
+      <div class="projects-head">
+        <p class="section-eyebrow">PROJECTS</p>
+        <h2 class="projects-title">Projects that explore<br>painting, design,<br>photography and more.</h2>
+      </div>
+      <div class="rail" id="rail">
+        <div class="rail-track" id="railTrack"><!-- cards injected --></div>
+      </div>
+    </section>
+
+    <!-- ============ WORK DETAIL ============ -->
+    <section class="view view-work" data-view="work">
+      <div class="work-grid">
+        <div class="work-info">
+          <p class="work-num" id="workNum">01</p>
+          <h2 class="work-title" id="workTitle"></h2>
+          <p class="work-desc" id="workDesc"></p>
+          <div class="work-meta" id="workMeta"><!-- meta cols injected --></div>
+        </div>
+        <div class="work-visual">
+          <div class="work-imgwrap" id="workImgWrap">
+            <img class="work-img" id="workImg" alt="">
+          </div>
+          <div class="work-imgdots" id="workImgDots"></div>
+        </div>
+      </div>
+      <div class="work-thumbs" id="workThumbs"><!-- other works --></div>
+    </section>
+
+    <!-- ============ ABOUT (placeholder) ============ -->
+    <section class="view view-about" data-view="about">
+      <div class="placeholder">
+        <p class="section-eyebrow">ABOUT</p>
+        <h2 class="placeholder-title">Coming soon.</h2>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT (placeholder) ============ -->
+    <section class="view view-contact" data-view="contact">
+      <div class="placeholder">
+        <p class="section-eyebrow">CONTACT</p>
+        <h2 class="placeholder-title">Coming soon.</h2>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/bow.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
