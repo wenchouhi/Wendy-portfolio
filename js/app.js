@@ -98,17 +98,47 @@
     railTrack.appendChild(card);
   });
 
-  // Card hover: subtle zoom on the image
+  // Card hover: subtle zoom on the image (delegated so it also covers the
+  // cloned cards used for the infinite auto-scroll below)
   if (finePointer && !reduceMotion) {
-    railTrack.querySelectorAll('.card').forEach((card) => {
-      const img = card.querySelector('.card-img');
-      card.addEventListener('pointerenter', () => {
-        gsap.to(img, { scale: 1.05, duration: 0.45, ease: 'power2.out' });
-      });
-      card.addEventListener('pointerleave', () => {
-        gsap.to(img, { scale: 1, duration: 0.45, ease: 'power2.out' });
-      });
+    railTrack.addEventListener('pointerover', (e) => {
+      const card = e.target.closest('.card');
+      if (!card || card.contains(e.relatedTarget)) return;
+      gsap.to(card.querySelector('.card-img'), { scale: 1.05, duration: 0.45, ease: 'power2.out' });
     });
+    railTrack.addEventListener('pointerout', (e) => {
+      const card = e.target.closest('.card');
+      if (!card || card.contains(e.relatedTarget)) return;
+      gsap.to(card.querySelector('.card-img'), { scale: 1, duration: 0.45, ease: 'power2.out' });
+    });
+  }
+
+  // Duplicate the card set once so the rail can auto-scroll infinitely to
+  // the left without ever showing a seam. Clones are decorative — hidden
+  // from assistive tech and excluded from the entrance animation.
+  let wrapWidth = 0;
+  if (!reduceMotion) {
+    Array.from(railTrack.children).forEach((c) => {
+      const clone = c.cloneNode(true);
+      clone.classList.add('card-clone');
+      clone.setAttribute('aria-hidden', 'true');
+      clone.tabIndex = -1;
+      railTrack.appendChild(clone);
+    });
+  }
+
+  function measureWrap() {
+    const cards = railTrack.querySelectorAll('.card');
+    if (cards.length < WORKS.length * 2) return;
+    wrapWidth = cards[WORKS.length].offsetLeft - cards[0].offsetLeft;
+  }
+  if (!reduceMotion && 'ResizeObserver' in window) {
+    new ResizeObserver(measureWrap).observe(railTrack);
+  }
+
+  function wrapRailScroll() {
+    if (wrapWidth <= 0) return;
+    if (rail.scrollLeft >= wrapWidth) rail.scrollLeft -= wrapWidth;
   }
 
   // Wheel → horizontal scroll; drag to scroll
@@ -116,7 +146,9 @@
   rail.addEventListener('wheel', (e) => {
     if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
       e.preventDefault();
+      pauseAutoScroll();
       rail.scrollLeft += e.deltaY;
+      wrapRailScroll();
     }
   }, { passive: false });
 
@@ -126,22 +158,61 @@
     dragMoved = false;
     dragStartX = e.clientX;
     dragScroll = rail.scrollLeft;
+    pauseAutoScroll();
   });
   window.addEventListener('pointermove', (e) => {
     if (!dragging) return;
     const dx = e.clientX - dragStartX;
     if (Math.abs(dx) > 5) dragMoved = true;
     rail.scrollLeft = dragScroll - dx;
+    wrapRailScroll();
   });
-  window.addEventListener('pointerup', () => { dragging = false; });
+  window.addEventListener('pointerup', () => {
+    dragging = false;
+    resumeAutoScrollSoon();
+  });
   railTrack.addEventListener('click', (e) => {
     if (dragMoved) e.preventDefault();
   }, true);
 
+  // Slow continuous auto-scroll (the rail drifts left on its own); pauses
+  // on hover/drag and resumes shortly after the user lets go.
+  const AUTO_SCROLL_SPEED = 22; // px per second
+  let autoScrollPaused = false;
+  let projectsActive = false;
+  let resumeTimer = null;
+  function pauseAutoScroll() {
+    autoScrollPaused = true;
+    clearTimeout(resumeTimer);
+  }
+  function resumeAutoScrollSoon(delay = 600) {
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => { autoScrollPaused = false; }, delay);
+  }
+  if (!reduceMotion) {
+    rail.addEventListener('pointerenter', pauseAutoScroll);
+    rail.addEventListener('pointerleave', () => resumeAutoScrollSoon());
+    // Track real elapsed time ourselves rather than relying on GSAP's
+    // ticker.deltaRatio(): its default lag smoothing caps the effective
+    // delta after any gap in rendering (backgrounded/occluded tab, low
+    // power mode), which made this drift nearly imperceptible whenever
+    // the browser wasn't painting at a steady 60fps.
+    let lastTickTime = null;
+    gsap.ticker.add(() => {
+      const now = performance.now();
+      if (lastTickTime === null) { lastTickTime = now; return; }
+      const dt = Math.min(now - lastTickTime, 250) / 1000;
+      lastTickTime = now;
+      if (autoScrollPaused || !projectsActive || wrapWidth <= 0) return;
+      rail.scrollLeft += AUTO_SCROLL_SPEED * dt;
+      wrapRailScroll();
+    });
+  }
+
   // Cards fade in as they enter the horizontal viewport
   function initRailReveal() {
     if (reduceMotion) return;
-    railTrack.querySelectorAll('.card').forEach((card) => {
+    railTrack.querySelectorAll('.card:not(.card-clone)').forEach((card) => {
       if (card.dataset.revealed) return;
       card.dataset.revealed = '1';
       gsap.from(card, {
@@ -256,7 +327,7 @@
       gsap.from('.foot-item', { autoAlpha: 0, y: 20, stagger: 0.08, delay: 0.2, clearProps: 'all' });
     } else if (name === 'projects') {
       gsap.from(['.section-eyebrow', '.projects-title'], { autoAlpha: 0, y: 30, stagger: 0.1, clearProps: 'all' });
-      const cards = railTrack.querySelectorAll('.card');
+      const cards = railTrack.querySelectorAll('.card:not(.card-clone)');
       gsap.from(cards, {
         autoAlpha: 0, y: 50, stagger: 0.06, duration: 0.8, delay: 0.15,
         onComplete: () => {
@@ -298,6 +369,9 @@
 
     if (route.name === 'home') window.Bow.start();
     else window.Bow.stop();
+
+    projectsActive = route.name === 'projects';
+    if (projectsActive) requestAnimationFrame(measureWrap);
 
     if (route.name === 'work') renderWork(route.index);
     animateViewIn(route.name);
