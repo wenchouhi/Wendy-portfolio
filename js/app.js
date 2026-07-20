@@ -190,22 +190,39 @@
     resumeTimer = setTimeout(() => { autoScrollPaused = false; }, delay);
   }
   if (!reduceMotion) {
-    rail.addEventListener('pointerenter', pauseAutoScroll);
-    rail.addEventListener('pointerleave', () => resumeAutoScrollSoon());
-    // Track real elapsed time ourselves rather than relying on GSAP's
-    // ticker.deltaRatio(): its default lag smoothing caps the effective
-    // delta after any gap in rendering (backgrounded/occluded tab, low
-    // power mode), which made this drift nearly imperceptible whenever
-    // the browser wasn't painting at a steady 60fps.
+    // Pause only while the pointer is over an actual card (so the user can
+    // aim and click) — not over the whole rail, which spans most of the
+    // viewport and would leave the drift paused almost permanently.
+    let cardHover = false;
+    railTrack.addEventListener('pointerover', (e) => {
+      cardHover = !!e.target.closest('.card');
+    });
+    railTrack.addEventListener('pointerout', (e) => {
+      if (e.target.closest('.card') && !(e.relatedTarget && e.relatedTarget.closest('.card'))) {
+        cardHover = false;
+      }
+    });
+
+    // Drift position is accumulated in a float of our own: browsers round
+    // scrollLeft to whole pixels on standard-DPI displays, so a
+    // read-add-write of +0.37px per frame gets swallowed by rounding and
+    // the rail never moves. dt comes from performance.now() because GSAP's
+    // deltaRatio() lag smoothing flattens the delta after paint gaps.
     let lastTickTime = null;
+    let autoPos = null;
     gsap.ticker.add(() => {
       const now = performance.now();
       if (lastTickTime === null) { lastTickTime = now; return; }
       const dt = Math.min(now - lastTickTime, 250) / 1000;
       lastTickTime = now;
-      if (autoScrollPaused || !projectsActive || wrapWidth <= 0) return;
-      rail.scrollLeft += AUTO_SCROLL_SPEED * dt;
-      wrapRailScroll();
+      if (autoScrollPaused || cardHover || dragging || !projectsActive || wrapWidth <= 0) {
+        autoPos = null; // resync with scrollLeft when the drift resumes
+        return;
+      }
+      if (autoPos === null) autoPos = rail.scrollLeft;
+      autoPos += AUTO_SCROLL_SPEED * dt;
+      if (autoPos >= wrapWidth) autoPos -= wrapWidth;
+      rail.scrollLeft = autoPos;
     });
   }
 
