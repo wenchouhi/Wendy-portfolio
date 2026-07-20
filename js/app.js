@@ -311,11 +311,25 @@
         b.addEventListener('click', () => showImage(i));
         workEls.dots.appendChild(b);
       });
-      workEls.imgWrap.style.cursor = '';
-      workEls.imgWrap.onclick = () => showImage((imgIndex + 1) % w.images.length);
-      workEls.imgWrap.dataset.cursor = 'NEXT';
+      workEls.imgWrap.onclick = (e) => {
+  const rect = workEls.imgWrap.getBoundingClientRect();
+  const clickX = e.clientX - rect.left;
+  const isLeftHalf = clickX < rect.width / 2;
+  if (isLeftHalf) {
+    showImage((imgIndex - 1 + w.images.length) % w.images.length);
+  } else {
+    showImage((imgIndex + 1) % w.images.length);
+  }
+};
+workEls.imgWrap.dataset.cursor = 'NEXT';
+       workEls.imgWrap.onpointermove = (e) => {
+    const rect = workEls.imgWrap.getBoundingClientRect();
+    const isLeftHalf = (e.clientX - rect.left) < rect.width / 2;
+    workEls.imgWrap.dataset.cursor = isLeftHalf ? 'PREV' : 'NEXT';
+  };
     } else {
       workEls.imgWrap.onclick = null;
+      workEls.imgWrap.onpointermove = null;
       delete workEls.imgWrap.dataset.cursor;
     }
     showImage(0);
