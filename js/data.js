@@ -4,7 +4,7 @@ window.WORKS = [
     "category": "Design",
     "categoryLabel": "GRAPHIC DESIGN",
     "title": "專輯封面設計",
-    "desc": "受到龐克樂團「破曉補習班」的邀請，為他們的單曲「晚安晨之美」製作封面，以歌詞作為發想描繪出被\nDeadline追著跑，不想認輸，拼命熬夜工作，堅持到天亮了才睡的心境。",
+    "desc": "受到龐克樂團「破曉補習班」的邀請，為他們的單曲「晚安晨之美」製作封面，以歌詞作為發想描繪出被Deadline追著跑，不想認輸，拼命熬夜工作，堅持到天亮了才睡的心境。",
     "longDesc": "",
     "year": "",
     "medium": "",
