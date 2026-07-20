@@ -22,7 +22,7 @@
   const isMobile = window.matchMedia('(max-width: 767px)').matches;
   const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
 
-  const COLOR = '169, 239, 213'; // #A9EFD5
+  const COLOR = '169, 239, 213'; // #7DEDC4
   const CONFIG = {
     budget: isMobile ? 1800 : 6000,   // mobile ≈ 43% of desktop
     stiffness: 0.045,
