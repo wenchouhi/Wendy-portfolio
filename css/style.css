@@ -100,8 +100,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .nav {
   position: fixed; z-index: 40;
   top: 40px; right: var(--margin);
-  display: flex; flex-direction: column; align-items: flex-end;
-  gap: 6px;
+  display: flex; flex-direction: row; align-items: center;
+  gap: 24px;
 }
 .nav a {
   font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em;
@@ -238,7 +238,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .card-imgwrap {
   height: calc(100% - 48px);
   overflow: hidden;
-  background: #F5F5F5;
+  background: transparent;
 }
 .card-img {
   height: 100%; width: auto;
@@ -304,7 +304,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .work-visual { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .work-imgwrap {
   height: min(64vh, 640px);
-  background: #F5F5F5;
+  background: transparent;
   overflow: hidden;
   display: flex; align-items: center; justify-content: center;
 }
