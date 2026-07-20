@@ -416,10 +416,10 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Project/01-自由人/3-文化與藝術產業活動企劃撰寫及專案執行案例.png"
+      "works/Project/01-自由人/3-文化與藝術產業活動企劃撰寫及專案執行案例.png",
       "works/Project/01-自由人/0-跨時空對話展覽.jpg",
       "works/Project/01-自由人/1-跨時空對話展覽成果.jpg",
-      "works/Project/01-自由人/2-記者會發表現場.jpg",
+      "works/Project/01-自由人/2-記者會發表現場.jpg"
     ],
     "cover": "works/Project/01-自由人/0-跨時空對話展覽.jpg"
   },
