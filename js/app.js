@@ -177,7 +177,7 @@
 
   // Slow continuous auto-scroll (the rail drifts left on its own); pauses
   // on hover/drag and resumes shortly after the user lets go.
-  const AUTO_SCROLL_SPEED = 22; // px per second
+  const AUTO_SCROLL_SPEED = 15; // px per second
   let autoScrollPaused = false;
   let projectsActive = false;
   let resumeTimer = null;
