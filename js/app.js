@@ -282,6 +282,23 @@
         <p class="meta-label">${k}</p>
         <p class="meta-value">${v}</p>
       </div>`).join('');
+     // Video link (only when the work has one)
+let videoEl = document.getElementById('workVideo');
+if (!videoEl) {
+  videoEl = document.createElement('a');
+  videoEl.id = 'workVideo';
+  videoEl.className = 'work-video-link';
+  videoEl.target = '_blank';
+  videoEl.rel = 'noopener noreferrer';
+  workEls.meta.insertAdjacentElement('afterend', videoEl);
+}
+if (w.videoUrl) {
+  videoEl.href = w.videoUrl;
+  videoEl.textContent = '▶ 觀看影片';
+  videoEl.style.display = '';
+} else {
+  videoEl.style.display = 'none';
+}
 
     function showImage(i) {
       imgIndex = i;
