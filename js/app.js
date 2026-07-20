@@ -25,6 +25,9 @@
   let navFloatTween = null;
 
   const enc = (p) => encodeURI(p);
+   const imgSrc = (item) => (typeof item === 'string' ? item : item.src);
+   const imgDesc = (item) => (typeof item === 'string' ? '' : (item.desc || ''));
+
 
   /* ============================================================
      Custom cursor
@@ -267,8 +270,6 @@
 
     workEls.num.textContent = String(index + 1).padStart(2, '0');
     workEls.title.textContent = w.title;
-    workEls.desc.textContent = w.desc || w.longDesc || '';
-    workEls.desc.style.display = workEls.desc.textContent ? '' : 'none';
 
     const meta = [
       ['CATEGORY', w.categoryLabel],
@@ -284,13 +285,20 @@
 
     function showImage(i) {
       imgIndex = i;
-      workEls.img.src = enc(w.images[i]);
-      workEls.img.alt = `${w.title} — ${i + 1}/${w.images.length}`;
-      workEls.dots.querySelectorAll('button').forEach((b, bi) => {
-        b.classList.toggle('is-active', bi === i);
-      });
-      if (!reduceMotion) {
-        gsap.fromTo(workEls.img, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 });
+  const item = w.images[i];
+  workEls.img.src = enc(imgSrc(item));
+  workEls.img.alt = `${w.title} — ${i + 1}/${w.images.length}`;
+
+  const desc = imgDesc(item) || w.desc || w.longDesc || '';
+  workEls.desc.textContent = desc;
+  workEls.desc.style.display = desc ? '' : 'none';
+
+  workEls.dots.querySelectorAll('button').forEach((b, bi) => {
+    b.classList.toggle('is-active', bi === i);
+  });
+  if (!reduceMotion) {
+    gsap.fromTo(workEls.img, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 });
+    gsap.fromTo(workEls.desc, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 });
       }
     }
 
