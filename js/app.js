@@ -325,7 +325,9 @@ workEls.imgWrap.dataset.cursor = 'NEXT';
        workEls.imgWrap.onpointermove = (e) => {
     const rect = workEls.imgWrap.getBoundingClientRect();
     const isLeftHalf = (e.clientX - rect.left) < rect.width / 2;
-    workEls.imgWrap.dataset.cursor = isLeftHalf ? 'PREV' : 'NEXT';
+  const label = isLeftHalf ? 'PREV' : 'NEXT';
+  workEls.imgWrap.dataset.cursor = label;
+  if (cursorLabel) cursorLabel.textContent = label;
   };
     } else {
       workEls.imgWrap.onclick = null;
