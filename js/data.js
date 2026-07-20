@@ -457,5 +457,5 @@ window.WORKS = [
       "works/Photograph/04-untitled/selected2.JPG"
     ],
     "cover": "generated/Photograph/04-untitled/selected1.jpg"
-  },
+  }
 ];
