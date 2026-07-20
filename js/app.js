@@ -289,7 +289,7 @@
   workEls.img.src = enc(imgSrc(item));
   workEls.img.alt = `${w.title} — ${i + 1}/${w.images.length}`;
 
-  const desc = imgDesc(item) || w.desc || w.longDesc || '';
+  const desc = imgDesc(item) || w.longDesc || w.desc || '';
   workEls.desc.textContent = desc;
   workEls.desc.style.display = desc ? '' : 'none';
 
