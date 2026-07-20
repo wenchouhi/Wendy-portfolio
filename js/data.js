@@ -34,20 +34,41 @@ window.WORKS = [
     "slug": "03-系學會",
     "category": "Design",
     "categoryLabel": "GRAPHIC DESIGN",
-    "title": "系學會",
+    "title": "系學會美宣設計作品",
     "desc": "",
     "longDesc": "",
     "year": "",
     "medium": "",
     "size": "",
     "images": [
-      "works/Design/03-系學會/geo是你啦＿貼紙設計.png",
-      "works/Design/03-系學會/logo設計＿01.jpg",
-      "works/Design/03-系學會/logo設計＿02.jpg",
-      "works/Design/03-系學會/logo設計＿03.jpg",
-      "works/Design/03-系學會/社群經營圖文＿系學會拷貝.png",
-      "works/Design/03-系學會/護照內頁.png",
-      "works/Design/03-系學會/護照外頁.png"
+      {
+      "src": "works/Design/03-系學會/社群經營圖文＿系學會拷貝.png",
+      "desc": "負責粉專貼文製作。"
+    },
+      {
+      "src": "works/Design/03-系學會/geo是你啦＿貼紙設計.png",
+      "desc": "系學會所使用相關文宣製作。"
+    },
+      {
+      "src": "works/Design/03-系學會/護照內頁.png",
+      "desc": "系學會所使用相關文宣製作。"
+    },
+      {
+      "src": "works/Design/03-系學會/護照外頁.png",
+      "desc": "系學會所使用相關文宣製作。"
+    },
+      {
+      "src": "works/Design/03-系學會/logo設計＿01.jpg",
+      "desc": "logo設計。"
+    },
+      {
+      "src": "works/Design/03-系學會/logo設計＿02.jpg",
+      "desc": "logo設計。"
+    },
+      {
+      "src": "works/Design/03-系學會/logo設計＿03.jpg",
+      "desc": "logo設計。"
+    },
     ],
     "cover": "works/Design/03-系學會/geo是你啦＿貼紙設計.png"
   },
@@ -55,7 +76,7 @@ window.WORKS = [
     "slug": "04-攝影社",
     "category": "Design",
     "categoryLabel": "GRAPHIC DESIGN",
-    "title": "攝影社設計",
+    "title": "攝影社設計作品",
     "desc": "主視覺設計",
     "longDesc": "我想你一定曾看過她。在這個城市的每個角落都能遇見相機小姐，你可能與她擦身而過與她搭乘同一班捷運，或與她分享同一片星空。相機小姐記得公園大榕樹下那張長椅在早晨、正午、傍晚隨著光影的顏色變化，她記得每週三晚上在河濱坐著喝酒的男人背影，相機小姐用她的眼睛記錄著每天在城市裡上演的每則小故事。\n每個帶著相機在城市探索的旅人，我們，都是相機小姐。\n俄們穿梭在城市的大街小巷，上一秒我們捕捉城市的光影，下一秒我們落入了別人的生活裡，我們用鏡頭記憶著城市的節奏。",
     "year": "",
@@ -67,13 +88,18 @@ window.WORKS = [
       "desc": "社團頭貼設計，以相機小姐為主視覺角色，建立辨識度高的社群形象。"
     },
     {
-      "src": "works/Design/04-攝影社/cover.jpg",
-      "desc": "封面主視覺，呈現城市光影與相機小姐穿梭街巷的意象。"
+      "src": "works/Design/04-攝影社/社群經營圖文＿攝影社.png",
+      "desc": "負責粉專貼文製作。"
     },
     "works/Design/04-攝影社/1-banner.png",
+    "works/Design/04-攝影社/3-招生文宣.png",
     {
-      "src": "works/Design/04-攝影社/3-招生文宣.png",
-      "desc": "招生文宣設計，傳達「每個帶著相機探索城市的旅人都是相機小姐」的核心概念。"
+      "src": "works/Design/04-攝影社/社服設計概念.png",
+      "desc": "社服設計概念，核心概念：相機小姐、底片元素，衣服設計為相機小姐悠然的漂浮在海面上，並且將社團名稱及屆數巧妙的安排在旁，期望每個成員在攝影社都能和相機小姐一般，遨遊在攝影世界的汪洋大海，享受沈浸於攝影的快樂。"
+    },
+      {
+      "src": "works/Design/04-攝影社/社服設計.png",
+      "desc": "社服實體照"
     }
   ],
   "cover": "works/Design/04-攝影社/0-頭貼.png"
@@ -82,15 +108,22 @@ window.WORKS = [
     "slug": "07-人孔蓋",
     "category": "Design",
     "categoryLabel": "GRAPHIC DESIGN",
-    "title": "人孔蓋",
+    "title": "內政部「下水道的臉」人孔蓋設計比賽",
     "desc": "",
-    "longDesc": "",
+    "longDesc": "作品名稱為：「給你元氣每一天！」 「老闆幫我加一顆蛋！」是許多人在早餐店的口頭禪荷包蛋是臺灣人日常中再熟悉不過的配菜，從早餐到晚餐都能見到他的身影，此次將荷包蛋作為人孔蓋的設計主角，搭配親切活潑的笑臉幫每一位用路人及下水道工程人員加顆蛋，讓大家每次看見它的時候都能被加油打氣，用滿滿的元氣開始每一天！",
     "year": "",
     "medium": "",
     "size": "",
     "images": [
       "works/Design/07-人孔蓋/人孔蓋示意圖.png",
-      "works/Design/07-人孔蓋/給你元氣每一天！.png"
+      {
+      "src": "works/Design/07-人孔蓋/給你元氣每一天！.png",
+      "desc": "字樣「嘎油！ka-iu」是網台語的加油，想讓不論是年長或是年輕的族群都能產生共鳴也讓外國觀光客更能認識台語文化。而背景採用臺灣傳統玻璃老花窗中的海棠花紋，作品融合復古傳統文化加上新穎可愛的荷包蛋圖樣，讓人孔蓋重獲新生！"
+    },
+   {
+      "src": "works/Design/07-人孔蓋/人孔蓋示意圖.png",
+      "desc": "字樣「嘎油！ka-iu」是網台語的加油，想讓不論是年長或是年輕的族群都能產生共鳴也讓外國觀光客更能認識台語文化。而背景採用臺灣傳統玻璃老花窗中的海棠花紋，作品融合復古傳統文化加上新穎可愛的荷包蛋圖樣，讓人孔蓋重獲新生！"
+    }
     ],
     "cover": "works/Design/07-人孔蓋/人孔蓋示意圖.png"
   },
@@ -105,11 +138,11 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
+      "works/Design/08-字體設計/筆畫組織.png",
       "works/Design/08-字體設計/尾端微向內凹.png",
       "works/Design/08-字體設計/海報呈現.png",
-      "works/Design/08-字體設計/筆畫組織.png"
     ],
-    "cover": "works/Design/08-字體設計/尾端微向內凹.png"
+    "cover": "works/Design/08-字體設計/筆畫組織.png"
   },
   {
     "slug": "01-長壽街客廳",
@@ -186,7 +219,7 @@ window.WORKS = [
       "generated/Illustration/05-spaghetti/耳機.jpg",
       "works/Illustration/05-spaghetti/未命名的作品 .png"
     ],
-    "cover": "generated/Illustration/05-spaghetti/耳機.jpg"
+    "cover": "generated/Illustration/05-spaghetti/未命名的作品 .png"
   },
   {
     "slug": "06-少女心",
@@ -302,9 +335,9 @@ window.WORKS = [
     "slug": "01-lastsummer",
     "category": "Photograph",
     "categoryLabel": "PHOTOGRAPHY",
-    "title": "last summer的海邊",
+    "title": "last summer",
     "desc": "",
-    "longDesc": "",
+    "longDesc": "記憶中一直存在的上個夏天",
     "year": "",
     "medium": "",
     "size": "",
@@ -322,9 +355,9 @@ window.WORKS = [
     "slug": "02-concert",
     "category": "Photograph",
     "categoryLabel": "PHOTOGRAPHY",
-    "title": "concert",
+    "title": "樂團攝影",
     "desc": "",
-    "longDesc": "",
+    "longDesc": "樂團Sulfur creek表演紀錄",
     "year": "",
     "medium": "",
     "size": "",
@@ -340,7 +373,7 @@ window.WORKS = [
     "slug": "03-hongkong",
     "category": "Photograph",
     "categoryLabel": "PHOTOGRAPHY",
-    "title": "hongkong",
+    "title": "Hongkong",
     "desc": "",
     "longDesc": "",
     "year": "",
@@ -358,35 +391,35 @@ window.WORKS = [
     "slug": "04-untitled",
     "category": "Photograph",
     "categoryLabel": "PHOTOGRAPHY",
-    "title": "untitled",
+    "title": "Selected",
     "desc": "",
     "longDesc": "",
     "year": "",
     "medium": "",
     "size": "",
     "images": [
-      "generated/Photograph/04-untitled/band5.jpg",
       "generated/Photograph/04-untitled/selected1.jpg",
       "generated/Photograph/04-untitled/selected3.jpg",
+      "generated/Photograph/04-untitled/band5.jpg",
       "works/Photograph/04-untitled/selected2.JPG"
     ],
-    "cover": "generated/Photograph/04-untitled/band5.jpg"
+    "cover": "generated/Photograph/04-untitled/selected1.jpg"
   },
   {
     "slug": "01-自由人",
     "category": "Project",
     "categoryLabel": "PROJECT",
     "title": "自由人藝術設計有限公司",
-    "desc": "2024年 2月我進入自由人藝術設計有限公司實習。實習歷程中，參與撰寫6件政府藝文標案企劃書，透過導師的指導和同事的合作，逐漸掌握如何將創意構想轉化為能被機構審核通過的結構性文件，理解藝術行政的文字工作是一種需要同時照顧創意邏輯與制度規範的精準語言。\n\n參與第一屆「跨時空對話：國父紀念館創意徵件」的展覽執行。這個展覽的核心概念，是讓一個承載了台灣半世紀記憶的公共空\n間，在進入 900 天整修工程期間，邀請市民透過文字、繪畫、照片、短片、歌曲等多元媒介，表達對國父紀念館的想像與情感，讓歷史與當代在藝術中產生對話。從 2024 年 1 月徵件開始，到 5 月頒獎典禮與展覽，共吸引 167 件參賽作品、超過 300 位創作者，累計參與人數達 2,500 人。負責每一個環節的細項安排和執行：從徵件作品整理、評選制度設計、展覽籌備，到工作坊、記者會與頒獎典禮的現場執行，皆獲得策展人的高度認可。",
+    "desc": "自由人藝術設計有限公司的實習歷程中，參與撰寫6件政府藝文標案企劃書，透過導師的指導和同事的合作，逐漸掌握如何將創意構想轉化為能被機構審核通過的結構性文件，理解藝術行政的文字工作是一種需要同時照顧創意邏輯與制度規範的精準語言。\n\n參與第一屆「跨時空對話：國父紀念館創意徵件」的展覽執行。這個展覽的核心概念，是讓一個承載了台灣半世紀記憶的公共空\n間，在進入 900 天整修工程期間，邀請市民透過文字、繪畫、照片、短片、歌曲等多元媒介，表達對國父紀念館的想像與情感，讓歷史與當代在藝術中產生對話。從 2024 年 1 月徵件開始，到 5 月頒獎典禮與展覽，共吸引 167 件參賽作品、超過 300 位創作者，累計參與人數達 2,500 人。負責每一個環節的細項安排和執行：從徵件作品整理、評選制度設計、展覽籌備，到工作坊、記者會與頒獎典禮的現場執行，皆獲得策展人的高度認可。",
     "longDesc": "",
     "year": "2024",
     "medium": "",
     "size": "",
     "images": [
+      "works/Project/01-自由人/3-文化與藝術產業活動企劃撰寫及專案執行案例.png"
       "works/Project/01-自由人/0-跨時空對話展覽.jpg",
       "works/Project/01-自由人/1-跨時空對話展覽成果.jpg",
       "works/Project/01-自由人/2-記者會發表現場.jpg",
-      "works/Project/01-自由人/3-文化與藝術產業活動企劃撰寫及專案執行案例.png"
     ],
     "cover": "works/Project/01-自由人/0-跨時空對話展覽.jpg"
   },
