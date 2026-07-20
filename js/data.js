@@ -27,6 +27,7 @@ window.WORKS = [
     "year": "2023",
     "medium": "",
     "size": "",
+    "videoUrl": "https://youtu.be/rUGzbyYPywQ?si=bDndezHdHzf4mXlS",
     "images": [
       "works/Project/02-畢業mv劇組/0-海報製作.jpg",
       "works/Project/02-畢業mv劇組/1-劇中場景搭建成果.png",
