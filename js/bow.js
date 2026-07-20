@@ -24,16 +24,16 @@
 
   const COLOR = '169, 239, 213'; // #A9EFD5
   const CONFIG = {
-    budget: isMobile ? 1800 : 4200,   // mobile ≈ 43% of desktop
+    budget: isMobile ? 1800 : 6000,   // mobile ≈ 43% of desktop
     stiffness: 0.045,
     damping: 0.86,
     repelRadius: isMobile ? 55 : 75,
     repelForce: 2.2,
     wobbleAmp: 1.2,
-    detachPerSec: isMobile ? 5 : 13,  // particles leaving the text per second
+    detachPerSec: isMobile ? 8 : 24,  // particles leaving the text per second
     gravity: 42,                      // px/s² for falling particles
     maxFallSpeed: 65,                 // px/s — slow, floaty descent
-    fallingCap: isMobile ? 90 : 320,
+    fallingCap: isMobile ? 150 : 550,
     pileEnabled: !isMobile,           // mobile skips accumulation entirely
     pileMaxRatio: 0.13,               // pile height cap as fraction of canvas height
     explodeRadius: 130,
@@ -87,7 +87,7 @@
     c.textAlign = 'center';
     c.textBaseline = 'middle';
     const cx = W / 2;
-    const cy = H * 0.45;
+    const cy = H * 0.55;
     c.fillText('Portfolio', cx, cy);
 
     const textW = c.measureText('Portfolio').width;
