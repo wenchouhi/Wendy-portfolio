@@ -21,8 +21,8 @@ window.WORKS = [
     "slug": "02-畢業mv劇組",
     "category": "Project",
     "categoryLabel": "PROJECT",
-    "title": "畢業mv劇組",
-    "desc": "擔任製片，負責製作流程統籌、預算規劃與資源整合，推動選角、場地準備及劇本開發等前期作業，執行跨部門溝通與時程控管，整合演員與拍攝團隊，確保拍攝流程高效運行並提升團隊協作效率。在美術組期間，我實際參與場景設計、道具製作，並依據劇本與鏡位需求反覆調整畫面層次細節，確保\n視覺元素能有效支撐敘事。",
+    "title": "臺師大畢業mv製作",
+    "desc": "擔任製片，負責製作流程統籌、預算規劃與資源整合，推動選角、場地準備及劇本開發等前期作業，執行跨部門溝通與時程控管，整合演員與拍攝團隊，確保拍攝流程高效運行並提升團隊協作效率。/n擔任美術組期間，我實際參與場景設計、道具製作，並依據劇本與鏡位需求反覆調整畫面層次細節，確保視覺元素能有效支撐敘事。",
     "longDesc": "",
     "year": "2023",
     "medium": "",
@@ -40,7 +40,7 @@ window.WORKS = [
     "category": "Project",
     "categoryLabel": "PROJECT",
     "title": "學生劇組《肉7667》",
-    "desc": "擔任學生劇組製片，負責統籌製作流程、籌措預算及協調團隊。成功推動多個項目，包括選角、場地準備和劇本發展，透過有效的時間管理，確保順利拍攝進行，協調演員與團隊，促進團結與合作，使劇組順利完成任務。",
+    "desc": "擔任劇組製片，負責統籌製作流程、籌措預算及協調團隊。成功推動多個項目，包括選角、場地準備和劇本發展，透過有效的時間管理，協調演員與團隊，確保順利拍攝進行。",
     "longDesc": "",
     "year": "2023",
     "medium": "",
@@ -48,8 +48,8 @@ window.WORKS = [
     "images": [
       "works/Project/03-學生劇組《肉7667》/0-劇照.jpg",
       "works/Project/03-學生劇組《肉7667》/1-劇照.jpg",
-      "works/Project/03-學生劇組《肉7667》/2-劇照.jpg",
-      "works/Project/03-學生劇組《肉7667》/3-劇照.jpg"
+      "works/Project/03-學生劇組《肉7667》/3-劇照.jpg",
+      "works/Project/03-學生劇組《肉7667》/2-劇照.jpg"
     ],
     "cover": "works/Project/03-學生劇組《肉7667》/0-劇照.jpg"
   },
@@ -352,7 +352,7 @@ window.WORKS = [
     "slug": "05-spaghetti",
     "category": "Illustration",
     "categoryLabel": "ILLUSTRATION",
-    "title": "spaghetti",
+    "title": "Spaghetti",
     "desc": "",
     "longDesc": "",
     "year": "",
@@ -362,7 +362,7 @@ window.WORKS = [
       "generated/Illustration/05-spaghetti/耳機.jpg",
       "works/Illustration/05-spaghetti/未命名的作品 .png"
     ],
-    "cover": "generated/Illustration/05-spaghetti/未命名的作品 .png"
+    "cover": "works/Illustration/05-spaghetti/未命名的作品 .png"
   },
   {
     "slug": "06-少女心",
