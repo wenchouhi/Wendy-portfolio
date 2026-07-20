@@ -349,6 +349,22 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .work-thumbs { justify-content: flex-start; padding-bottom: 96px; }
 }
 
+.work-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+  padding: 12px 20px;
+  background: var(--c-text);
+  color: var(--c-bg);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  transition: opacity 0.25s ease;
+}
+.work-video-link:hover { opacity: 0.75; }
+
 /* ============ Placeholder pages ============ */
 .placeholder {
   min-height: 100vh; min-height: 100svh;
