@@ -1,4 +1,148 @@
 window.WORKS = [
+{
+    "slug": "01-自由人",
+    "category": "Project",
+    "categoryLabel": "PROJECT",
+    "title": "自由人藝術設計有限公司",
+    "desc": "自由人藝術設計有限公司的實習歷程中，參與撰寫6件政府藝文標案企劃書，透過導師的指導和同事的合作，逐漸掌握如何將創意構想轉化為能被機構審核通過的結構性文件，理解藝術行政的文字工作是一種需要同時照顧創意邏輯與制度規範的精準語言。\n\n參與第一屆「跨時空對話：國父紀念館創意徵件」的展覽執行。這個展覽的核心概念，是讓一個承載了台灣半世紀記憶的公共空\n間，在進入 900 天整修工程期間，邀請市民透過文字、繪畫、照片、短片、歌曲等多元媒介，表達對國父紀念館的想像與情感，讓歷史與當代在藝術中產生對話。從 2024 年 1 月徵件開始，到 5 月頒獎典禮與展覽，共吸引 167 件參賽作品、超過 300 位創作者，累計參與人數達 2,500 人。負責每一個環節的細項安排和執行：從徵件作品整理、評選制度設計、展覽籌備，到工作坊、記者會與頒獎典禮的現場執行，皆獲得策展人的高度認可。",
+    "longDesc": "",
+    "year": "2024",
+    "medium": "",
+    "size": "",
+    "images": [
+      "works/Project/01-自由人/3-文化與藝術產業活動企劃撰寫及專案執行案例.png",
+      "works/Project/01-自由人/0-跨時空對話展覽.jpg",
+      "works/Project/01-自由人/1-跨時空對話展覽成果.jpg",
+      "works/Project/01-自由人/2-記者會發表現場.jpg"
+    ],
+    "cover": "works/Project/01-自由人/0-跨時空對話展覽.jpg"
+  },
+  {
+    "slug": "02-畢業mv劇組",
+    "category": "Project",
+    "categoryLabel": "PROJECT",
+    "title": "畢業mv劇組",
+    "desc": "擔任製片，負責製作流程統籌、預算規劃與資源整合，推動選角、場地準備及劇本開發等前期作業，執行跨部門溝通與時程控管，整合演員與拍攝團隊，確保拍攝流程高效運行並提升團隊協作效率。在美術組期間，我實際參與場景設計、道具製作，並依據劇本與鏡位需求反覆調整畫面層次細節，確保\n視覺元素能有效支撐敘事。",
+    "longDesc": "",
+    "year": "2023",
+    "medium": "",
+    "size": "",
+    "images": [
+      "works/Project/02-畢業mv劇組/0-海報製作.jpg",
+      "works/Project/02-畢業mv劇組/1-劇中場景搭建成果.png",
+      "works/Project/02-畢業mv劇組/2-劇中場景搭建成果.png",
+      "works/Project/02-畢業mv劇組/3-劇中場景搭建成果.png"
+    ],
+    "cover": "works/Project/02-畢業mv劇組/0-海報製作.jpg"
+  },
+  {
+    "slug": "03-學生劇組《肉7667》",
+    "category": "Project",
+    "categoryLabel": "PROJECT",
+    "title": "學生劇組《肉7667》",
+    "desc": "擔任學生劇組製片，負責統籌製作流程、籌措預算及協調團隊。成功推動多個項目，包括選角、場地準備和劇本發展，透過有效的時間管理，確保順利拍攝進行，協調演員與團隊，促進團結與合作，使劇組順利完成任務。",
+    "longDesc": "",
+    "year": "2023",
+    "medium": "",
+    "size": "",
+    "images": [
+      "works/Project/03-學生劇組《肉7667》/0-劇照.jpg",
+      "works/Project/03-學生劇組《肉7667》/1-劇照.jpg",
+      "works/Project/03-學生劇組《肉7667》/2-劇照.jpg",
+      "works/Project/03-學生劇組《肉7667》/3-劇照.jpg"
+    ],
+    "cover": "works/Project/03-學生劇組《肉7667》/0-劇照.jpg"
+  },
+  {
+    "slug": "01-美術系樓梯",
+    "category": "Oilpainting",
+    "categoryLabel": "OIL PAINTING",
+    "title": "美術系樓梯",
+    "desc": "人造空間充滿著人類生活的痕跡，我喜愛感受生活所留下的真實，像是那些被使用的、被留下的物件，都是我所迷戀的。總是以不同的視角去觀察室內空間，透過空間試著去想像它與人的關係，有時也能透過轉換視角，改變我在空間的角色。\n\n 我的作品受到法國藝術家Sam Szafran的啟發，他以各種角度和視角挑戰同樣的樓梯間，並嘗試多種媒材表現，呈現作品間多樣的氛圍。在不以生命體為主角的情況下，展現出充滿生機的室內空間。",
+    "longDesc": "",
+    "year": "2024",
+    "medium": "Oil on canvas",
+    "size": "45.5cm × 38cm",
+    "images": [
+      "works/Oilpainting/01-美術系樓梯/美術系樓梯.jpg"
+    ],
+    "cover": "works/Oilpainting/01-美術系樓梯/美術系樓梯.jpg"
+  },
+  {
+    "slug": "02-來沖沖去沖沖",
+    "category": "Oilpainting",
+    "categoryLabel": "OIL PAINTING",
+    "title": "來沖沖，去沖沖",
+    "desc": "",
+    "longDesc": "",
+    "year": "2024",
+    "medium": "Oil on canvas",
+    "size": "45cm X 38cm",
+    "images": [
+      "works/Oilpainting/02-來沖沖去沖沖/來沖沖去沖沖.jpg"
+    ],
+    "cover": "works/Oilpainting/02-來沖沖去沖沖/來沖沖去沖沖.jpg"
+  },
+  {
+    "slug": "03-我家門前有小河",
+    "category": "Oilpainting",
+    "categoryLabel": "OIL PAINTING",
+    "title": "我家門前有小河",
+    "desc": "",
+    "longDesc": "",
+    "year": "2023",
+    "medium": "Oil on canvas",
+    "size": "65cm × 53cm",
+    "images": [
+      "works/Oilpainting/03-我家門前有小河/我家門前有小河.jpg"
+    ],
+    "cover": "works/Oilpainting/03-我家門前有小河/我家門前有小河.jpg"
+  },
+  {
+    "slug": "04-靜物",
+    "category": "Oilpainting",
+    "categoryLabel": "OIL PAINTING",
+    "title": "靜物",
+    "desc": "",
+    "longDesc": "",
+    "year": "2024",
+    "medium": "Oil on canvas",
+    "size": "60.5cm × 50cm",
+    "images": [
+      "generated/Oilpainting/04-靜物/靜物.jpg"
+    ],
+    "cover": "generated/Oilpainting/04-靜物/靜物.jpg"
+  },
+  {
+    "slug": "05-蘭嶼家門口",
+    "category": "Oilpainting",
+    "categoryLabel": "OIL PAINTING",
+    "title": "蘭嶼家門口",
+    "desc": "從民宿陡峭巷子走出來準備去岸邊時，看見的日常的冬天蘭嶼夕陽美景，這是我們在蘭嶼每天的幸福。",
+    "longDesc": "",
+    "year": "2022",
+    "medium": "Oil on canvas",
+    "size": "65cm × 53cm",
+    "images": [
+      "works/Oilpainting/05-蘭嶼家門口/蘭嶼家門口.jpg"
+    ],
+    "cover": "works/Oilpainting/05-蘭嶼家門口/蘭嶼家門口.jpg"
+  },
+  {
+    "slug": "07-plantmyself",
+    "category": "Oilpainting",
+    "categoryLabel": "OIL PAINTING",
+    "title": "Plant myself",
+    "desc": "我以前就在想，如果我是一隻恐龍，我的夢幻工作大概就是在博物館當化石吧。只可惜我這一輩子沒機會當特種生物了。所以我在作品裡，把自己的棺材作為種子，想在數千數萬年的未來，把自己種成化石，而且這次我要當獨角獸 🦄️ ！",
+    "longDesc": "",
+    "year": "2023",
+    "medium": "Oil and soil on canvas",
+    "size": "45cm X 31cm",
+    "images": [
+      "works/Oilpainting/07-plantmyself/Plant myself.png"
+    ],
+    "cover": "works/Oilpainting/07-plantmyself/Plant myself.png"
+  },
   {
     "slug": "01-專輯封面設計",
     "category": "Design",
@@ -34,7 +178,7 @@ window.WORKS = [
     "slug": "03-系學會",
     "category": "Design",
     "categoryLabel": "GRAPHIC DESIGN",
-    "title": "系學會美宣設計作品",
+    "title": "系學會設計作品",
     "desc": "",
     "longDesc": "",
     "year": "",
@@ -78,7 +222,7 @@ window.WORKS = [
     "categoryLabel": "GRAPHIC DESIGN",
     "title": "攝影社設計作品",
     "desc": "主視覺設計",
-    "longDesc": "我想你一定曾看過她。在這個城市的每個角落都能遇見相機小姐，你可能與她擦身而過與她搭乘同一班捷運，或與她分享同一片星空。相機小姐記得公園大榕樹下那張長椅在早晨、正午、傍晚隨著光影的顏色變化，她記得每週三晚上在河濱坐著喝酒的男人背影，相機小姐用她的眼睛記錄著每天在城市裡上演的每則小故事。\n每個帶著相機在城市探索的旅人，我們，都是相機小姐。\n俄們穿梭在城市的大街小巷，上一秒我們捕捉城市的光影，下一秒我們落入了別人的生活裡，我們用鏡頭記憶著城市的節奏。",
+    "longDesc": "我想你一定曾看過她。在這個城市的每個角落都能遇見相機小姐，你可能與她擦身而過與她搭乘同一班捷運，或與她分享同一片星空。相機小姐記得公園大榕樹下那張長椅在早晨、正午、傍晚隨著光影的顏色變化，她記得每週三晚上在河濱坐著喝酒的男人背影，相機小姐用她的眼睛記錄著每天在城市裡上演的每則小故事。\n每個帶著相機在城市探索的旅人，我們，都是相機小姐。\n我們穿梭在城市的大街小巷，上一秒我們捕捉城市的光影，下一秒我們落入了別人的生活裡，我們用鏡頭記憶著城市的節奏。",
     "year": "",
     "medium": "",
     "size": "",
@@ -98,7 +242,7 @@ window.WORKS = [
       "desc": "社服設計概念，核心概念：相機小姐、底片元素，衣服設計為相機小姐悠然的漂浮在海面上，並且將社團名稱及屆數巧妙的安排在旁，期望每個成員在攝影社都能和相機小姐一般，遨遊在攝影世界的汪洋大海，享受沈浸於攝影的快樂。"
     },
       {
-      "src": "works/Design/04-攝影社/社服設計.png",
+      "src": "works/Design/04-攝影社/社服設計.PNG",
       "desc": "社服實體照"
     }
   ],
@@ -115,13 +259,12 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Design/07-人孔蓋/人孔蓋示意圖.png",
       {
-      "src": "works/Design/07-人孔蓋/給你元氣每一天！.png",
+      "src": "works/Design/07-人孔蓋/人孔蓋示意圖.png",
       "desc": "字樣「嘎油！ka-iu」是網台語的加油，想讓不論是年長或是年輕的族群都能產生共鳴也讓外國觀光客更能認識台語文化。而背景採用臺灣傳統玻璃老花窗中的海棠花紋，作品融合復古傳統文化加上新穎可愛的荷包蛋圖樣，讓人孔蓋重獲新生！"
     },
    {
-      "src": "works/Design/07-人孔蓋/人孔蓋示意圖.png",
+      "src": "works/Design/07-人孔蓋/給你元氣每一天！.png",
       "desc": "字樣「嘎油！ka-iu」是網台語的加油，想讓不論是年長或是年輕的族群都能產生共鳴也讓外國觀光客更能認識台語文化。而背景採用臺灣傳統玻璃老花窗中的海棠花紋，作品融合復古傳統文化加上新穎可愛的荷包蛋圖樣，讓人孔蓋重獲新生！"
     }
     ],
@@ -242,96 +385,6 @@ window.WORKS = [
     "cover": "works/Illustration/06-少女心/梅酒.png"
   },
   {
-    "slug": "01-美術系樓梯",
-    "category": "Oilpainting",
-    "categoryLabel": "OIL PAINTING",
-    "title": "美術系樓梯",
-    "desc": "人造空間充滿著人類生活的痕跡，我喜愛感受生活所留下的真實，像是那些被使用的、被留下的物件，都是我所迷戀的。總是以不同的視角去觀察室內空間，透過空間試著去想像它與人的關係，有時也能透過轉換視角，改變我在空間的角色。\n\n 我的作品受到法國藝術家Sam Szafran的啟發，他以各種角度和視角挑戰同樣的樓梯間，並嘗試多種媒材表現，呈現作品間多樣的氛圍。在不以生命體為主角的情況下，展現出充滿生機的室內空間。",
-    "longDesc": "",
-    "year": "2024",
-    "medium": "Oil on canvas",
-    "size": "45.5cm × 38cm",
-    "images": [
-      "works/Oilpainting/01-美術系樓梯/美術系樓梯.jpg"
-    ],
-    "cover": "works/Oilpainting/01-美術系樓梯/美術系樓梯.jpg"
-  },
-  {
-    "slug": "02-來沖沖去沖沖",
-    "category": "Oilpainting",
-    "categoryLabel": "OIL PAINTING",
-    "title": "來沖沖，去沖沖",
-    "desc": "",
-    "longDesc": "",
-    "year": "2024",
-    "medium": "Oil on canvas",
-    "size": "45cm X 38cm",
-    "images": [
-      "works/Oilpainting/02-來沖沖去沖沖/來沖沖去沖沖.jpg"
-    ],
-    "cover": "works/Oilpainting/02-來沖沖去沖沖/來沖沖去沖沖.jpg"
-  },
-  {
-    "slug": "03-我家門前有小河",
-    "category": "Oilpainting",
-    "categoryLabel": "OIL PAINTING",
-    "title": "我家門前有小河",
-    "desc": "",
-    "longDesc": "",
-    "year": "2023",
-    "medium": "Oil on canvas",
-    "size": "65cm × 53cm",
-    "images": [
-      "works/Oilpainting/03-我家門前有小河/我家門前有小河.jpg"
-    ],
-    "cover": "works/Oilpainting/03-我家門前有小河/我家門前有小河.jpg"
-  },
-  {
-    "slug": "04-靜物",
-    "category": "Oilpainting",
-    "categoryLabel": "OIL PAINTING",
-    "title": "靜物",
-    "desc": "",
-    "longDesc": "",
-    "year": "2024",
-    "medium": "Oil on canvas",
-    "size": "60.5cm × 50cm",
-    "images": [
-      "generated/Oilpainting/04-靜物/靜物.jpg"
-    ],
-    "cover": "generated/Oilpainting/04-靜物/靜物.jpg"
-  },
-  {
-    "slug": "05-蘭嶼家門口",
-    "category": "Oilpainting",
-    "categoryLabel": "OIL PAINTING",
-    "title": "蘭嶼家門口",
-    "desc": "從民宿陡峭巷子走出來準備去岸邊時，看見的日常的冬天蘭嶼夕陽美景，這是我們在蘭嶼每天的幸福。",
-    "longDesc": "",
-    "year": "2022",
-    "medium": "Oil on canvas",
-    "size": "65cm × 53cm",
-    "images": [
-      "works/Oilpainting/05-蘭嶼家門口/蘭嶼家門口.jpg"
-    ],
-    "cover": "works/Oilpainting/05-蘭嶼家門口/蘭嶼家門口.jpg"
-  },
-  {
-    "slug": "07-plantmyself",
-    "category": "Oilpainting",
-    "categoryLabel": "OIL PAINTING",
-    "title": "Plant myself",
-    "desc": "我以前就在想，如果我是一隻恐龍，我的夢幻工作大概就是在博物館當化石吧。只可惜我這一輩子沒機會當特種生物了。所以我在作品裡，把自己的棺材作為種子，想在數千數萬年的未來，把自己種成化石，而且這次我要當獨角獸 🦄️ ！",
-    "longDesc": "",
-    "year": "2023",
-    "medium": "Oil and soil on canvas",
-    "size": "45cm X 31cm",
-    "images": [
-      "works/Oilpainting/07-plantmyself/Plant myself.png"
-    ],
-    "cover": "works/Oilpainting/07-plantmyself/Plant myself.png"
-  },
-  {
     "slug": "01-lastsummer",
     "category": "Photograph",
     "categoryLabel": "PHOTOGRAPHY",
@@ -405,58 +458,4 @@ window.WORKS = [
     ],
     "cover": "generated/Photograph/04-untitled/selected1.jpg"
   },
-  {
-    "slug": "01-自由人",
-    "category": "Project",
-    "categoryLabel": "PROJECT",
-    "title": "自由人藝術設計有限公司",
-    "desc": "自由人藝術設計有限公司的實習歷程中，參與撰寫6件政府藝文標案企劃書，透過導師的指導和同事的合作，逐漸掌握如何將創意構想轉化為能被機構審核通過的結構性文件，理解藝術行政的文字工作是一種需要同時照顧創意邏輯與制度規範的精準語言。\n\n參與第一屆「跨時空對話：國父紀念館創意徵件」的展覽執行。這個展覽的核心概念，是讓一個承載了台灣半世紀記憶的公共空\n間，在進入 900 天整修工程期間，邀請市民透過文字、繪畫、照片、短片、歌曲等多元媒介，表達對國父紀念館的想像與情感，讓歷史與當代在藝術中產生對話。從 2024 年 1 月徵件開始，到 5 月頒獎典禮與展覽，共吸引 167 件參賽作品、超過 300 位創作者，累計參與人數達 2,500 人。負責每一個環節的細項安排和執行：從徵件作品整理、評選制度設計、展覽籌備，到工作坊、記者會與頒獎典禮的現場執行，皆獲得策展人的高度認可。",
-    "longDesc": "",
-    "year": "2024",
-    "medium": "",
-    "size": "",
-    "images": [
-      "works/Project/01-自由人/3-文化與藝術產業活動企劃撰寫及專案執行案例.png",
-      "works/Project/01-自由人/0-跨時空對話展覽.jpg",
-      "works/Project/01-自由人/1-跨時空對話展覽成果.jpg",
-      "works/Project/01-自由人/2-記者會發表現場.jpg"
-    ],
-    "cover": "works/Project/01-自由人/0-跨時空對話展覽.jpg"
-  },
-  {
-    "slug": "02-畢業mv劇組",
-    "category": "Project",
-    "categoryLabel": "PROJECT",
-    "title": "畢業mv劇組",
-    "desc": "擔任製片，負責製作流程統籌、預算規劃與資源整合，推動選角、場地準備及劇本開發等前期作業，執行跨部門溝通與時程控管，整合演員與拍攝團隊，確保拍攝流程高效運行並提升團隊協作效率。在美術組期間，我實際參與場景設計、道具製作，並依據劇本與鏡位需求反覆調整畫面層次細節，確保\n視覺元素能有效支撐敘事。",
-    "longDesc": "",
-    "year": "2023",
-    "medium": "",
-    "size": "",
-    "images": [
-      "works/Project/02-畢業mv劇組/0-海報製作.jpg",
-      "works/Project/02-畢業mv劇組/1-劇中場景搭建成果.png",
-      "works/Project/02-畢業mv劇組/2-劇中場景搭建成果.png",
-      "works/Project/02-畢業mv劇組/3-劇中場景搭建成果.png"
-    ],
-    "cover": "works/Project/02-畢業mv劇組/0-海報製作.jpg"
-  },
-  {
-    "slug": "03-學生劇組《肉7667》",
-    "category": "Project",
-    "categoryLabel": "PROJECT",
-    "title": "學生劇組《肉7667》",
-    "desc": "擔任學生劇組製片，負責統籌製作流程、籌措預算及協調團隊。成功推動多個項目，包括選角、場地準備和劇本發展，透過有效的時間管理，確保順利拍攝進行，協調演員與團隊，促進團結與合作，使劇組順利完成任務。",
-    "longDesc": "",
-    "year": "2023",
-    "medium": "",
-    "size": "",
-    "images": [
-      "works/Project/03-學生劇組《肉7667》/0-劇照.jpg",
-      "works/Project/03-學生劇組《肉7667》/1-劇照.jpg",
-      "works/Project/03-學生劇組《肉7667》/2-劇照.jpg",
-      "works/Project/03-學生劇組《肉7667》/3-劇照.jpg"
-    ],
-    "cover": "works/Project/03-學生劇組《肉7667》/0-劇照.jpg"
-  }
 ];
