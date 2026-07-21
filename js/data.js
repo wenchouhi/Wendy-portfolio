@@ -10,12 +10,12 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Project/01-自由人/3-文化與藝術產業活動企劃撰寫及專案執行案例.png",
-      "works/Project/01-自由人/0-跨時空對話展覽.jpg",
-      "works/Project/01-自由人/1-跨時空對話展覽成果.jpg",
-      "works/Project/01-自由人/2-記者會發表現場.jpg"
+      "works/Project/01-自由人/3-文化與藝術產業活動企劃撰寫及專案執行案例.webp",
+      "works/Project/01-自由人/0-跨時空對話展覽.webp",
+      "works/Project/01-自由人/1-跨時空對話展覽成果.webp",
+      "works/Project/01-自由人/2-記者會發表現場.webp"
     ],
-    "cover": "works/Project/01-自由人/0-跨時空對話展覽.jpg"
+    "cover": "works/Project/01-自由人/0-跨時空對話展覽.webp"
   },
   {
     "slug": "02-畢業mv劇組",
@@ -29,12 +29,12 @@ window.WORKS = [
     "size": "",
     "videoUrl": "https://youtu.be/rUGzbyYPywQ?si=bDndezHdHzf4mXlS",
     "images": [
-      "works/Project/02-畢業mv劇組/0-海報製作.jpg",
-      "works/Project/02-畢業mv劇組/1-劇中場景搭建成果.png",
-      "works/Project/02-畢業mv劇組/2-劇中場景搭建成果.png",
-      "works/Project/02-畢業mv劇組/3-劇中場景搭建成果.png"
+      "works/Project/02-畢業mv劇組/0-海報製作.webp",
+      "works/Project/02-畢業mv劇組/1-劇中場景搭建成果.webp",
+      "works/Project/02-畢業mv劇組/2-劇中場景搭建成果.webp",
+      "works/Project/02-畢業mv劇組/3-劇中場景搭建成果.webp"
     ],
-    "cover": "works/Project/02-畢業mv劇組/0-海報製作.jpg"
+    "cover": "works/Project/02-畢業mv劇組/0-海報製作.webp"
   },
   {
     "slug": "03-學生劇組《肉7667》",
@@ -47,12 +47,12 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Project/03-學生劇組《肉7667》/0-劇照.jpg",
-      "works/Project/03-學生劇組《肉7667》/1-劇照.jpg",
-      "works/Project/03-學生劇組《肉7667》/3-劇照.jpg",
-      "works/Project/03-學生劇組《肉7667》/2-劇照.jpg"
+      "works/Project/03-學生劇組《肉7667》/0-劇照.webp",
+      "works/Project/03-學生劇組《肉7667》/1-劇照.webp",
+      "works/Project/03-學生劇組《肉7667》/3-劇照.webp",
+      "works/Project/03-學生劇組《肉7667》/2-劇照.webp"
     ],
-    "cover": "works/Project/03-學生劇組《肉7667》/0-劇照.jpg"
+    "cover": "works/Project/03-學生劇組《肉7667》/0-劇照.webp"
   },
   {
     "slug": "01-美術系樓梯",
@@ -65,9 +65,9 @@ window.WORKS = [
     "medium": "Oil on canvas",
     "size": "45.5cm × 38cm",
     "images": [
-      "works/Oilpainting/01-美術系樓梯/美術系樓梯.jpg"
+      "works/Oilpainting/01-美術系樓梯/美術系樓梯.webp"
     ],
-    "cover": "works/Oilpainting/01-美術系樓梯/美術系樓梯.jpg"
+    "cover": "works/Oilpainting/01-美術系樓梯/美術系樓梯.webp"
   },
   {
     "slug": "02-來沖沖去沖沖",
@@ -80,9 +80,9 @@ window.WORKS = [
     "medium": "Oil on canvas",
     "size": "45cm X 38cm",
     "images": [
-      "works/Oilpainting/02-來沖沖去沖沖/來沖沖去沖沖.jpg"
+      "works/Oilpainting/02-來沖沖去沖沖/來沖沖去沖沖.webp"
     ],
-    "cover": "works/Oilpainting/02-來沖沖去沖沖/來沖沖去沖沖.jpg"
+    "cover": "works/Oilpainting/02-來沖沖去沖沖/來沖沖去沖沖.webp"
   },
   {
     "slug": "03-我家門前有小河",
@@ -95,9 +95,9 @@ window.WORKS = [
     "medium": "Oil on canvas",
     "size": "65cm × 53cm",
     "images": [
-      "works/Oilpainting/03-我家門前有小河/我家門前有小河.jpg"
+      "works/Oilpainting/03-我家門前有小河/我家門前有小河.webp"
     ],
-    "cover": "works/Oilpainting/03-我家門前有小河/我家門前有小河.jpg"
+    "cover": "works/Oilpainting/03-我家門前有小河/我家門前有小河.webp"
   },
   {
     "slug": "04-靜物",
@@ -110,9 +110,9 @@ window.WORKS = [
     "medium": "Oil on canvas",
     "size": "60.5cm × 50cm",
     "images": [
-      "generated/Oilpainting/04-靜物/靜物.jpg"
+      "works/Oilpainting/04-靜物/靜物.webp"
     ],
-    "cover": "generated/Oilpainting/04-靜物/靜物.jpg"
+    "cover": "works/Oilpainting/04-靜物/靜物.webp"
   },
   {
     "slug": "05-蘭嶼家門口",
@@ -125,9 +125,9 @@ window.WORKS = [
     "medium": "Oil on canvas",
     "size": "65cm × 53cm",
     "images": [
-      "works/Oilpainting/05-蘭嶼家門口/蘭嶼家門口.jpg"
+      "works/Oilpainting/05-蘭嶼家門口/蘭嶼家門口.webp"
     ],
-    "cover": "works/Oilpainting/05-蘭嶼家門口/蘭嶼家門口.jpg"
+    "cover": "works/Oilpainting/05-蘭嶼家門口/蘭嶼家門口.webp"
   },
   {
     "slug": "07-plantmyself",
@@ -140,9 +140,9 @@ window.WORKS = [
     "medium": "Oil and soil on canvas",
     "size": "45cm X 31cm",
     "images": [
-      "works/Oilpainting/07-plantmyself/Plant myself.png"
+      "works/Oilpainting/07-plantmyself/Plant myself.webp"
     ],
-    "cover": "works/Oilpainting/07-plantmyself/Plant myself.png"
+    "cover": "works/Oilpainting/07-plantmyself/Plant myself.webp"
   },
   {
     "slug": "01-專輯封面設計",
@@ -155,9 +155,9 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Design/01-專輯封面設計/01-晚安晨之美.png"
+      "works/Design/01-專輯封面設計/01-晚安晨之美.webp"
     ],
-    "cover": "works/Design/01-專輯封面設計/01-晚安晨之美.png"
+    "cover": "works/Design/01-專輯封面設計/01-晚安晨之美.webp"
   },
   {
     "slug": "02-coffeeshot",
@@ -170,10 +170,10 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Design/02-coffeeshot/01-coffee shot.JPG",
-      "works/Design/02-coffeeshot/02-Coffee shot.png"
+      "works/Design/02-coffeeshot/01-coffee shot.webp",
+      "works/Design/02-coffeeshot/02-Coffee shot.webp"
     ],
-    "cover": "works/Design/02-coffeeshot/01-coffee shot.JPG"
+    "cover": "works/Design/02-coffeeshot/01-coffee shot.webp"
   },
   {
     "slug": "03-系學會",
@@ -187,35 +187,35 @@ window.WORKS = [
     "size": "",
     "images": [
       {
-      "src": "works/Design/03-系學會/社群經營圖文＿系學會拷貝.png",
+      "src": "works/Design/03-系學會/社群經營圖文＿系學會拷貝.webp",
       "desc": "負責粉專貼文製作。"
     },
       {
-      "src": "works/Design/03-系學會/geo是你啦＿貼紙設計.png",
+      "src": "works/Design/03-系學會/geo是你啦＿貼紙設計.webp",
       "desc": "系學會所使用相關文宣製作。"
     },
       {
-      "src": "works/Design/03-系學會/護照內頁.png",
+      "src": "works/Design/03-系學會/護照內頁.webp",
       "desc": "系學會所使用相關文宣製作。"
     },
       {
-      "src": "works/Design/03-系學會/護照外頁.png",
+      "src": "works/Design/03-系學會/護照外頁.webp",
       "desc": "系學會所使用相關文宣製作。"
     },
       {
-      "src": "works/Design/03-系學會/logo設計＿01.jpg",
+      "src": "works/Design/03-系學會/logo設計＿01.webp",
       "desc": "logo設計。"
     },
       {
-      "src": "works/Design/03-系學會/logo設計＿02.jpg",
+      "src": "works/Design/03-系學會/logo設計＿02.webp",
       "desc": "logo設計。"
     },
       {
-      "src": "works/Design/03-系學會/logo設計＿03.jpg",
+      "src": "works/Design/03-系學會/logo設計＿03.webp",
       "desc": "logo設計。"
     },
     ],
-    "cover": "works/Design/03-系學會/geo是你啦＿貼紙設計.png"
+    "cover": "works/Design/03-系學會/geo是你啦＿貼紙設計.webp"
   },
   {
     "slug": "04-攝影社",
@@ -229,25 +229,25 @@ window.WORKS = [
     "size": "",
     "images": [
           {
-      "src": "works/Design/04-攝影社/0-頭貼.png",
+      "src": "works/Design/04-攝影社/0-頭貼.webp",
       "desc": "社團頭貼設計，以相機小姐為主視覺角色，建立辨識度高的社群形象。"
     },
     {
-      "src": "works/Design/04-攝影社/社群經營圖文＿攝影社.png",
+      "src": "works/Design/04-攝影社/社群經營圖文＿攝影社.webp",
       "desc": "負責粉專貼文製作。"
     },
-    "works/Design/04-攝影社/1-banner.png",
-    "works/Design/04-攝影社/3-招生文宣.png",
+    "works/Design/04-攝影社/1-banner.webp",
+    "works/Design/04-攝影社/3-招生文宣.webp",
     {
-      "src": "works/Design/04-攝影社/社服設計概念.png",
+      "src": "works/Design/04-攝影社/社服設計概念.webp",
       "desc": "社服設計概念，核心概念：相機小姐、底片元素，衣服設計為相機小姐悠然的漂浮在海面上，並且將社團名稱及屆數巧妙的安排在旁，期望每個成員在攝影社都能和相機小姐一般，遨遊在攝影世界的汪洋大海，享受沈浸於攝影的快樂。"
     },
       {
-      "src": "works/Design/04-攝影社/社服設計.PNG",
+      "src": "works/Design/04-攝影社/社服設計.webp",
       "desc": "社服實體照"
     }
   ],
-  "cover": "works/Design/04-攝影社/0-頭貼.png"
+  "cover": "works/Design/04-攝影社/0-頭貼.webp"
 },
   {
     "slug": "07-人孔蓋",
@@ -261,15 +261,15 @@ window.WORKS = [
     "size": "",
     "images": [
       {
-      "src": "works/Design/07-人孔蓋/人孔蓋示意圖.png",
+      "src": "works/Design/07-人孔蓋/人孔蓋示意圖.webp",
       "desc": "字樣「嘎油！ka-iu」是網台語的加油，想讓不論是年長或是年輕的族群都能產生共鳴也讓外國觀光客更能認識台語文化。而背景採用臺灣傳統玻璃老花窗中的海棠花紋，作品融合復古傳統文化加上新穎可愛的荷包蛋圖樣，讓人孔蓋重獲新生！"
     },
    {
-      "src": "works/Design/07-人孔蓋/給你元氣每一天！.png",
+      "src": "works/Design/07-人孔蓋/給你元氣每一天！.webp",
       "desc": "字樣「嘎油！ka-iu」是網台語的加油，想讓不論是年長或是年輕的族群都能產生共鳴也讓外國觀光客更能認識台語文化。而背景採用臺灣傳統玻璃老花窗中的海棠花紋，作品融合復古傳統文化加上新穎可愛的荷包蛋圖樣，讓人孔蓋重獲新生！"
     }
     ],
-    "cover": "works/Design/07-人孔蓋/人孔蓋示意圖.png"
+    "cover": "works/Design/07-人孔蓋/人孔蓋示意圖.webp"
   },
   {
     "slug": "08-字體設計",
@@ -282,11 +282,11 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Design/08-字體設計/筆畫組織.png",
-      "works/Design/08-字體設計/尾端微向內凹.png",
-      "works/Design/08-字體設計/海報呈現.png",
+      "works/Design/08-字體設計/筆畫組織.webp",
+      "works/Design/08-字體設計/尾端微向內凹.webp",
+      "works/Design/08-字體設計/海報呈現.webp",
     ],
-    "cover": "works/Design/08-字體設計/筆畫組織.png"
+    "cover": "works/Design/08-字體設計/筆畫組織.webp"
   },
   {
     "slug": "01-長壽街客廳",
@@ -299,9 +299,9 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Illustration/01-長壽街客廳/長壽街客廳.png"
+      "works/Illustration/01-長壽街客廳/長壽街客廳.webp"
     ],
-    "cover": "works/Illustration/01-長壽街客廳/長壽街客廳.png"
+    "cover": "works/Illustration/01-長壽街客廳/長壽街客廳.webp"
   },
   {
     "slug": "02-me",
@@ -314,9 +314,9 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Illustration/02-me/Me.png"
+      "works/Illustration/02-me/Me.webp"
     ],
-    "cover": "works/Illustration/02-me/Me.png"
+    "cover": "works/Illustration/02-me/Me.webp"
   },
   {
     "slug": "03-soclose",
@@ -329,9 +329,9 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Illustration/03-soclose/03-soclose.png"
+      "works/Illustration/03-soclose/03-soclose.webp"
     ],
-    "cover": "works/Illustration/03-soclose/03-soclose.png"
+    "cover": "works/Illustration/03-soclose/03-soclose.webp"
   },
   {
     "slug": "04-untitled",
@@ -344,10 +344,10 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Illustration/04-untitled/地球蛋糕.png",
-      "works/Illustration/04-untitled/師大攝影.png"
+      "works/Illustration/04-untitled/地球蛋糕.webp",
+      "works/Illustration/04-untitled/師大攝影.webp"
     ],
-    "cover": "works/Illustration/04-untitled/地球蛋糕.png"
+    "cover": "works/Illustration/04-untitled/地球蛋糕.webp"
   },
   {
     "slug": "05-spaghetti",
@@ -360,10 +360,10 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "generated/Illustration/05-spaghetti/耳機.jpg",
-      "works/Illustration/05-spaghetti/未命名的作品 .png"
+      "works/Illustration/05-spaghetti/耳機.webp",
+      "works/Illustration/05-spaghetti/未命名的作品 .webp"
     ],
-    "cover": "works/Illustration/05-spaghetti/未命名的作品 .png"
+    "cover": "works/Illustration/05-spaghetti/未命名的作品 .webp"
   },
   {
     "slug": "06-少女心",
@@ -376,14 +376,14 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Illustration/06-少女心/梅酒.png",
-      "works/Illustration/06-少女心/椰子.png",
-      "works/Illustration/06-少女心/測速照相機.png",
-      "works/Illustration/06-少女心/玫瑰.png",
-      "works/Illustration/06-少女心/茄子.png",
-      "works/Illustration/06-少女心/草莓蛋糕.png"
+      "works/Illustration/06-少女心/梅酒.webp",
+      "works/Illustration/06-少女心/椰子.webp",
+      "works/Illustration/06-少女心/測速照相機.webp",
+      "works/Illustration/06-少女心/玫瑰.webp",
+      "works/Illustration/06-少女心/茄子.webp",
+      "works/Illustration/06-少女心/草莓蛋糕.webp"
     ],
-    "cover": "works/Illustration/06-少女心/梅酒.png"
+    "cover": "works/Illustration/06-少女心/梅酒.webp"
   },
   {
     "slug": "01-lastsummer",
@@ -396,14 +396,14 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Photograph/01-lastsummer/01-海邊.jpg",
-      "works/Photograph/01-lastsummer/02-海邊.jpg",
-      "works/Photograph/01-lastsummer/03-海邊.jpg",
-      "works/Photograph/01-lastsummer/04-海邊.jpg",
-      "works/Photograph/01-lastsummer/05-海邊.jpg",
-      "works/Photograph/01-lastsummer/06-海邊.JPG"
+      "works/Photograph/01-lastsummer/01-海邊.webp",
+      "works/Photograph/01-lastsummer/02-海邊.webp",
+      "works/Photograph/01-lastsummer/03-海邊.webp",
+      "works/Photograph/01-lastsummer/04-海邊.webp",
+      "works/Photograph/01-lastsummer/05-海邊.webp",
+      "works/Photograph/01-lastsummer/06-海邊.webp"
     ],
-    "cover": "works/Photograph/01-lastsummer/01-海邊.jpg"
+    "cover": "works/Photograph/01-lastsummer/01-海邊.webp"
   },
   {
     "slug": "02-concert",
@@ -416,12 +416,12 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Photograph/02-concert/band1.JPG",
-      "works/Photograph/02-concert/band2.jpg",
-      "works/Photograph/02-concert/band3.jpg",
-      "works/Photograph/02-concert/band4.jpg"
+      "works/Photograph/02-concert/band1.webp",
+      "works/Photograph/02-concert/band2.webp",
+      "works/Photograph/02-concert/band3.webp",
+      "works/Photograph/02-concert/band4.webp"
     ],
-    "cover": "works/Photograph/02-concert/band1.JPG"
+    "cover": "works/Photograph/02-concert/band1.webp"
   },
   {
     "slug": "03-hongkong",
@@ -434,12 +434,12 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "works/Photograph/03-hongkong/selected4.jpg",
-      "works/Photograph/03-hongkong/selected5.jpg",
-      "works/Photograph/03-hongkong/selected6.jpg",
-      "works/Photograph/03-hongkong/selected7.jpg"
+      "works/Photograph/03-hongkong/selected4.webp",
+      "works/Photograph/03-hongkong/selected5.webp",
+      "works/Photograph/03-hongkong/selected6.webp",
+      "works/Photograph/03-hongkong/selected7.webp"
     ],
-    "cover": "works/Photograph/03-hongkong/selected4.jpg"
+    "cover": "works/Photograph/03-hongkong/selected4.webp"
   },
   {
     "slug": "04-untitled",
@@ -452,11 +452,11 @@ window.WORKS = [
     "medium": "",
     "size": "",
     "images": [
-      "generated/Photograph/04-untitled/selected1.jpg",
-      "generated/Photograph/04-untitled/selected3.jpg",
-      "generated/Photograph/04-untitled/band5.jpg",
-      "works/Photograph/04-untitled/selected2.JPG"
+      "works/Photograph/04-untitled/selected1.webp",
+      "works/Photograph/04-untitled/selected3.webp",
+      "works/Photograph/04-untitled/band5.webp",
+      "works/Photograph/04-untitled/selected2.webp"
     ],
-    "cover": "generated/Photograph/04-untitled/selected1.jpg"
+    "cover": "works/Photograph/04-untitled/selected1.webp"
   }
 ];
