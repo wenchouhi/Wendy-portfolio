@@ -152,6 +152,7 @@
       pauseAutoScroll();
       rail.scrollLeft += e.deltaY;
       wrapRailScroll();
+      resumeAutoScrollSoon();
     }
   }, { passive: false });
 
@@ -180,7 +181,7 @@
 
   // Slow continuous auto-scroll (the rail drifts left on its own); pauses
   // on hover/drag and resumes shortly after the user lets go.
-  const AUTO_SCROLL_SPEED = 15; // px per second
+  const AUTO_SCROLL_SPEED = 40; // px per second
   let autoScrollPaused = false;
   let projectsActive = false;
   let resumeTimer = null;
@@ -205,6 +206,9 @@
         cardHover = false;
       }
     });
+   rail.addEventListener('pointerleave', () => {
+        cardHover = false;
+      });
 
     // Drift position is accumulated in a float of our own: browsers round
     // scrollLeft to whole pixels on standard-DPI displays, so a
