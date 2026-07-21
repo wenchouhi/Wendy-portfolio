@@ -272,7 +272,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .work-info { max-width: 480px; }
 .work-num { font-size: 0.85rem; font-weight: 600; color: var(--c-muted); margin-bottom: 16px; }
 .work-title {
-  font-size: clamp(2rem, 4.4vw, 4rem);
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1.04;
