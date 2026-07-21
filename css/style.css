@@ -7,8 +7,11 @@
   --c-text: #0A0A0A;
   --c-muted: #8C8C8C;
   --c-line: #E5E5E5;
+  --c-teal: #2E8B79;
   --margin: 80px;
   --font-sans: "Inter", "Noto Sans TC", "PingFang TC", "Helvetica Neue", sans-serif;
+  --font-hand-tc: "Klee One", "Noto Sans TC", sans-serif;
+  --font-hand-en: "Caveat", cursive;
 }
 
 @media (max-width: 1199px) { :root { --margin: 48px; } }
@@ -379,6 +382,163 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-weight: 900;
   letter-spacing: -0.02em;
   color: var(--c-line);
+}
+
+/* ============ ABOUT ============ */
+.view-about.is-active {
+  display: flex; flex-direction: column;
+  min-height: 100vh; min-height: 100svh;
+}
+.about-wrap {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 48px;
+  padding: 130px var(--margin) 60px;
+}
+.about-col { display: flex; flex-direction: column; }
+.about-col-left {
+  flex: 0 0 clamp(220px, 22vw, 300px);
+  justify-content: space-between;
+  gap: 32px;
+}
+.about-col-center {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+}
+.about-col-right {
+  flex: 0 0 clamp(200px, 20vw, 280px);
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* --- tagline (flower + slogan) --- */
+.about-tagline { display: flex; align-items: flex-start; gap: 14px; }
+.about-flower { width: 88px; flex: 0 0 auto; margin-top: -14px; }
+.tagline-lines { display: flex; flex-direction: column; gap: 8px; }
+.tagline-line {
+  font-family: var(--font-hand-tc);
+  font-size: 1.2rem;
+  color: var(--c-text);
+  white-space: nowrap;
+}
+.tagline-line:nth-child(1) { transform: rotate(-3deg); }
+.tagline-line:nth-child(2) { transform: rotate(2deg); margin-left: 16px; }
+.tagline-line:nth-child(3) { transform: rotate(-1.5deg); margin-left: 4px; }
+
+/* --- polaroid photo (static focal point) --- */
+.about-photo { display: flex; justify-content: center; }
+.about-photo-img {
+  width: 100%; max-width: 240px;
+  transform: rotate(-4deg);
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.16));
+}
+
+/* --- softwares (star + list) --- */
+.about-software { position: relative; display: flex; align-items: flex-end; }
+.about-star {
+  position: absolute; z-index: 0;
+  width: 108px;
+  top: -34px; left: -34px;
+}
+.about-software-body { position: relative; z-index: 1; }
+.hand-en {
+  font-family: var(--font-hand-en);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--c-text);
+  margin-bottom: 4px;
+}
+.about-software-body p {
+  font-size: 0.86rem;
+  color: var(--c-text);
+  line-height: 1.6;
+}
+
+/* --- intro paragraph + experience list --- */
+.about-intro-text {
+  font-family: var(--font-hand-tc);
+  font-size: 1.08rem;
+  line-height: 1.95;
+  color: var(--c-teal);
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+.about-exp {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 10px;
+  max-width: 640px;
+}
+.about-exp li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.85rem;
+  color: var(--c-text);
+  line-height: 1.6;
+}
+.about-exp li::before {
+  content: "";
+  position: absolute; left: 0; top: 0.6em;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--c-text);
+}
+
+/* --- badge sticker --- */
+.about-badge { width: 168px; margin-right: -14px; }
+
+/* --- contact (envelope + info) --- */
+.about-contact { display: flex; align-items: center; gap: 4px; }
+.about-envelope { width: 150px; flex: 0 0 auto; }
+.about-contact-body p { font-size: 0.92rem; font-weight: 600; }
+.about-contact-body a {
+  color: var(--c-text);
+  cursor: pointer;
+  user-select: text;
+}
+
+@media (max-width: 1023px) {
+  .about-wrap { padding-top: 150px; gap: 20px; }
+  .about-col-left { flex-basis: 160px; gap: 24px; }
+  .about-col-right { flex-basis: 150px; }
+  .about-flower { width: 56px; margin-top: 0; }
+  .tagline-lines { gap: 4px; }
+  .tagline-line { font-size: 0.86rem; white-space: normal; }
+  .tagline-line:nth-child(2) { margin-left: 8px; }
+  .tagline-line:nth-child(3) { margin-left: 0; }
+  .about-star { width: 68px; top: -18px; left: -18px; }
+  .about-badge { width: 112px; margin-right: 0; }
+  .about-envelope { width: 96px; }
+  .hand-en { font-size: 1.25rem; }
+  .about-intro-text { font-size: 0.94rem; line-height: 1.75; }
+  .about-exp li { font-size: 0.78rem; }
+  .about-contact-body p { font-size: 0.8rem; }
+}
+
+@media (max-width: 767px) {
+  .about-wrap {
+    flex-direction: column;
+    padding: 96px var(--margin) 100px;
+    gap: 40px;
+  }
+  .about-col { display: contents; }
+  .about-badge { order: 1; align-self: center; margin-right: 0; }
+  .about-tagline { order: 2; }
+  .about-photo { order: 3; }
+  .about-intro { order: 4; }
+  .about-software { order: 5; }
+  .about-contact { order: 6; }
+
+  .about-tagline { justify-content: center; }
+  .tagline-line { white-space: normal; }
+  .about-col-right { align-items: center; text-align: center; }
+  .about-contact { flex-direction: column; gap: 12px; text-align: center; }
+  .about-software { flex-direction: column; align-items: center; text-align: center; }
+  .about-star { position: static; margin-bottom: 8px; }
+  .about-intro-text, .about-exp { max-width: none; }
 }
 
 /* ============ Link underline hover ============ */

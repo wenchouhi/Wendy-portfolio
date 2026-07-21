@@ -13,7 +13,27 @@
       "Bash(git remote *)",
       "Bash(git ls-remote *)",
       "Bash(echo \"exit code: $?\")",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git fetch *)",
+      "Bash(git pull *)",
+      "Bash(git stash *)",
+      "Bash(cp ~/Downloads/about-assets-webp/flower.webp assets/about/flower.webp)",
+      "Bash(cp ~/Downloads/about-assets-webp/star.webp assets/about/star.webp)",
+      "Bash(cp ~/Downloads/about-assets-webp/photoofme.webp assets/about/photoofme.webp)",
+      "Bash(cp ~/Downloads/about-assets-webp/envelope.webp assets/about/envelope.webp)",
+      "Bash(cp ~/Downloads/about-assets-webp/about_badge.webp assets/about/about_badge.webp)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -m pip --version)",
+      "Bash(python3 -c \"import fontTools\")",
+      "Bash(pip3 list *)",
+      "Bash(curl -sS -m 5 -o /dev/null -w \"%{http_code}\\\\n\" \"https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng\")",
+      "Bash(pip3 install *)",
+      "Bash(python3 -c \"import fontTools; print\\('ok', fontTools.version\\)\")",
+      "Read(//private/tmp/fontcheck/**)",
+      "Bash(python3)",
+      "Bash(rm -rf /tmp/fontcheck)",
+      "Bash(git status *)",
+      "Bash(git rebase *)"
     ]
   }
 }

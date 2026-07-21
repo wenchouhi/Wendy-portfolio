@@ -379,6 +379,30 @@ workEls.imgWrap.dataset.cursor = 'NEXT';
   }
 
   /* ============================================================
+     About — floating decorative elements
+     ============================================================ */
+  let aboutFloatTweens = [];
+  function startAboutFloat() {
+    if (reduceMotion || aboutFloatTweens.length) return;
+    document.querySelectorAll('.about-float').forEach((el, i) => {
+      aboutFloatTweens.push(gsap.to(el, {
+        y: (i % 2 === 0 ? -1 : 1) * gsap.utils.random(6, 10),
+        rotation: gsap.utils.random(-3, 3),
+        duration: gsap.utils.random(2.5, 4),
+        delay: i * 0.25 + gsap.utils.random(0, 0.6),
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+      }));
+    });
+  }
+  function stopAboutFloat() {
+    aboutFloatTweens.forEach((t) => t.kill());
+    aboutFloatTweens = [];
+    gsap.set('.about-float', { clearProps: 'transform' });
+  }
+
+  /* ============================================================
      View entrance animations
      ============================================================ */
   function animateViewIn(name) {
@@ -397,7 +421,9 @@ workEls.imgWrap.dataset.cursor = 'NEXT';
           initRailReveal();
         },
       });
-    } else if (name === 'about' || name === 'contact') {
+    } else if (name === 'about') {
+      gsap.from('.about-anim', { autoAlpha: 0, y: 28, stagger: 0.09, duration: 0.7, clearProps: 'all' });
+    } else if (name === 'contact') {
       gsap.from(`.view-${name} .placeholder > *`, { autoAlpha: 0, y: 24, stagger: 0.1, clearProps: 'all' });
     }
   }
@@ -431,6 +457,9 @@ workEls.imgWrap.dataset.cursor = 'NEXT';
 
     if (route.name === 'home') window.Bow.start();
     else window.Bow.stop();
+
+    if (route.name === 'about') startAboutFloat();
+    else stopAboutFloat();
 
     projectsActive = route.name === 'projects';
     if (projectsActive) requestAnimationFrame(measureWrap);
