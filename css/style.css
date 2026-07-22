@@ -395,28 +395,49 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   align-items: stretch;
   gap: 48px;
   padding: 130px var(--margin) 60px;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 .about-col { display: flex; flex-direction: column; }
 .about-col-left {
-  flex: 0 0 clamp(220px, 22vw, 300px);
-  justify-content: space-between;
-  gap: 32px;
+  flex: 0 0 clamp(280px, 25vw, 360px);
+  justify-content: flex-start;
+  gap: 36px;
 }
+.about-software { margin-top: auto; }
 .about-col-center {
   flex: 1 1 auto;
   justify-content: center;
   min-width: 0;
+  padding-left: 32px;
 }
 .about-col-right {
-  flex: 0 0 clamp(200px, 20vw, 280px);
+  flex: 0 0 clamp(280px, 26vw, 400px);
   justify-content: space-between;
   align-items: flex-end;
   text-align: right;
 }
 
+/* --- progressive reveal: hidden text content --- */
+.reveal-item {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* --- clickable decorative triggers --- */
+.about-trigger {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.about-trigger:focus-visible {
+  outline: 2px solid var(--c-teal);
+  outline-offset: 6px;
+  border-radius: 6px;
+}
+
 /* --- tagline (flower + slogan) --- */
 .about-tagline { display: flex; align-items: flex-start; gap: 14px; }
-.about-flower { width: 88px; flex: 0 0 auto; margin-top: -14px; }
+.about-flower { width: 150px; flex: 0 0 auto; margin-top: -14px; }
 .tagline-lines { display: flex; flex-direction: column; gap: 8px; }
 .tagline-line {
   font-family: var(--font-hand-tc);
@@ -428,25 +449,35 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .tagline-line:nth-child(2) { transform: rotate(2deg); margin-left: 16px; }
 .tagline-line:nth-child(3) { transform: rotate(-1.5deg); margin-left: 4px; }
 
-/* --- polaroid photo (static focal point) --- */
+/* --- polaroid photo (draggable sticker) --- */
 .about-photo { display: flex; justify-content: center; }
 .about-photo-img {
+  position: relative; z-index: 5;
   width: 100%; max-width: 240px;
   transform: rotate(-4deg);
   filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.16));
+  cursor: grab;
+  touch-action: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  transition: filter 0.2s ease;
+}
+.about-photo-img.is-dragging {
+  cursor: grabbing;
+  filter: drop-shadow(0 30px 42px rgba(0, 0, 0, 0.32));
 }
 
 /* --- softwares (star + list) --- */
 .about-software { position: relative; display: flex; align-items: flex-end; }
 .about-star {
   position: absolute; z-index: 0;
-  width: 108px;
-  top: -34px; left: -34px;
+  width: 173px;
+  top: -53px; left: -53px;
 }
 .about-software-body { position: relative; z-index: 1; }
 .hand-en {
   font-family: var(--font-hand-en);
-  font-size: 1.7rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: var(--c-text);
   margin-bottom: 4px;
@@ -460,8 +491,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* --- intro paragraph + experience list --- */
 .about-intro-text {
   font-family: var(--font-hand-tc);
-  font-size: 1.08rem;
-  line-height: 1.95;
+  font-size: 1.15rem;
+  line-height: 2;
   color: var(--c-teal);
   max-width: 640px;
   margin-bottom: 28px;
@@ -488,11 +519,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 /* --- badge sticker --- */
-.about-badge { width: 168px; margin-right: -14px; }
+.about-badge { width: 325px; margin-right: 0; }
 
 /* --- contact (envelope + info) --- */
 .about-contact { display: flex; align-items: center; gap: 4px; }
-.about-envelope { width: 150px; flex: 0 0 auto; }
+.about-envelope { width: 220px; flex: 0 0 auto; }
 .about-contact-body p { font-size: 0.92rem; font-weight: 600; }
 .about-contact-body a {
   color: var(--c-text);
@@ -501,19 +532,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 @media (max-width: 1023px) {
-  .about-wrap { padding-top: 150px; gap: 20px; }
-  .about-col-left { flex-basis: 160px; gap: 24px; }
-  .about-col-right { flex-basis: 150px; }
-  .about-flower { width: 56px; margin-top: 0; }
+  .about-wrap { padding-top: 150px; gap: 24px; }
+  .about-col-left { flex-basis: 190px; gap: 24px; }
+  .about-col-right { flex-basis: 200px; }
+  .about-flower { width: 88px; margin-top: 0; }
   .tagline-lines { gap: 4px; }
   .tagline-line { font-size: 0.86rem; white-space: normal; }
   .tagline-line:nth-child(2) { margin-left: 8px; }
   .tagline-line:nth-child(3) { margin-left: 0; }
-  .about-star { width: 68px; top: -18px; left: -18px; }
-  .about-badge { width: 112px; margin-right: 0; }
-  .about-envelope { width: 96px; }
-  .hand-en { font-size: 1.25rem; }
-  .about-intro-text { font-size: 0.94rem; line-height: 1.75; }
+  .about-star { width: 100px; top: -30px; left: -30px; }
+  .about-badge { width: 190px; margin-right: 0; }
+  .about-envelope { width: 128px; }
+  .hand-en { font-size: 1.5rem; }
+  .about-intro-text { font-size: 0.98rem; line-height: 1.8; }
   .about-exp li { font-size: 0.78rem; }
   .about-contact-body p { font-size: 0.8rem; }
 }

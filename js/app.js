@@ -381,25 +381,201 @@ workEls.imgWrap.dataset.cursor = 'NEXT';
   /* ============================================================
      About — floating decorative elements
      ============================================================ */
-  let aboutFloatTweens = [];
+  const aboutFloatTweens = new Map();
+  function addAboutFloat(el, i) {
+    if (reduceMotion || aboutFloatTweens.has(el)) return;
+    aboutFloatTweens.set(el, gsap.to(el, {
+      y: (i % 2 === 0 ? -1 : 1) * gsap.utils.random(6, 10),
+      rotation: gsap.utils.random(-3, 3),
+      duration: gsap.utils.random(2.5, 4),
+      delay: gsap.utils.random(0, 0.6),
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+    }));
+  }
   function startAboutFloat() {
-    if (reduceMotion || aboutFloatTweens.length) return;
-    document.querySelectorAll('.about-float').forEach((el, i) => {
-      aboutFloatTweens.push(gsap.to(el, {
-        y: (i % 2 === 0 ? -1 : 1) * gsap.utils.random(6, 10),
-        rotation: gsap.utils.random(-3, 3),
-        duration: gsap.utils.random(2.5, 4),
-        delay: i * 0.25 + gsap.utils.random(0, 0.6),
-        ease: 'sine.inOut',
-        yoyo: true,
-        repeat: -1,
-      }));
-    });
+    if (reduceMotion) return;
+    document.querySelectorAll('.about-float').forEach((el, i) => addAboutFloat(el, i));
   }
   function stopAboutFloat() {
     aboutFloatTweens.forEach((t) => t.kill());
-    aboutFloatTweens = [];
+    aboutFloatTweens.clear();
     gsap.set('.about-float', { clearProps: 'transform' });
+  }
+  function killFloatFor(el) {
+    const t = aboutFloatTweens.get(el);
+    if (t) { t.kill(); aboutFloatTweens.delete(el); }
+  }
+
+  /* ============================================================
+     About — progressive reveal (click a decorative object to
+     bounce its associated text into view)
+     ============================================================ */
+  const REVEAL_GROUPS = {
+    tagline: {
+      trigger: () => $('.about-flower'),
+      items: () => document.querySelectorAll('.about-tagline .reveal-item'),
+      hiddenPose: { y: -36, scale: 1 },
+      animating: false,
+    },
+    software: {
+      trigger: () => $('.about-star'),
+      items: () => document.querySelectorAll('.about-software-body .reveal-item'),
+      hiddenPose: { y: -16, scale: 0.3 },
+      animating: false,
+    },
+    intro: {
+      trigger: () => $('.about-badge'),
+      items: () => document.querySelectorAll('.about-intro .reveal-item'),
+      hiddenPose: { y: -36, scale: 1 },
+      animating: false,
+    },
+    contact: {
+      trigger: () => $('.about-envelope'),
+      items: () => document.querySelectorAll('.about-contact-body .reveal-item'),
+      hiddenPose: { y: -36, scale: 1 },
+      animating: false,
+    },
+  };
+
+  function resetAboutReveal() {
+    document.querySelectorAll('.about-trigger').forEach((t) => {
+      t.classList.remove('is-revealed');
+      gsap.set(t, { scale: 1 });
+    });
+    Object.values(REVEAL_GROUPS).forEach((group) => {
+      group.animating = false;
+      const items = group.items();
+      if (reduceMotion) {
+        gsap.set(items, { autoAlpha: 1, y: 0, scale: 1 });
+      } else {
+        gsap.set(items, { autoAlpha: 0, ...group.hiddenPose });
+      }
+    });
+  }
+
+  function toggleGroup(name) {
+    const group = REVEAL_GROUPS[name];
+    const trigger = group && group.trigger();
+    if (!trigger || group.animating) return;
+
+    const items = group.items();
+    const expanding = !trigger.classList.contains('is-revealed');
+    const expandEase = name === 'software' ? 'back.out(2.2)' : 'bounce.out';
+    const expandDuration = name === 'software' ? 0.55 : 0.7;
+
+    if (reduceMotion) {
+      trigger.classList.toggle('is-revealed', expanding);
+      if (expanding) {
+        gsap.set(items, { autoAlpha: 1, y: 0, scale: 1 });
+      } else {
+        gsap.set(items, { autoAlpha: 0, ...group.hiddenPose });
+      }
+      return;
+    }
+
+    group.animating = true;
+
+    if (expanding) {
+      trigger.classList.add('is-revealed');
+      killFloatFor(trigger);
+      gsap.to(trigger, { scale: 1, duration: 0.3, ease: 'power2.out' });
+      gsap.to(items, {
+        autoAlpha: 1, y: 0, scale: 1,
+        duration: expandDuration, ease: expandEase, stagger: 0.12, overwrite: true,
+        onComplete: () => { group.animating = false; },
+      });
+    } else {
+      trigger.classList.remove('is-revealed');
+      addAboutFloat(trigger, 0);
+      gsap.to(items, {
+        autoAlpha: 0, ...group.hiddenPose,
+        duration: 0.4, ease: 'back.in(2.5)', stagger: 0.05, overwrite: true,
+        onComplete: () => { group.animating = false; },
+      });
+    }
+  }
+
+  document.querySelectorAll('.about-trigger').forEach((trigger) => {
+    const name = trigger.dataset.reveal;
+    const activate = () => toggleGroup(name);
+    trigger.addEventListener('click', activate);
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+    });
+    if (finePointer && !reduceMotion) {
+      trigger.addEventListener('pointerover', () => {
+        if (trigger.classList.contains('is-revealed')) return;
+        gsap.to(trigger, { scale: 1.08, duration: 0.3, ease: 'power2.out' });
+      });
+      trigger.addEventListener('pointerout', () => {
+        if (trigger.classList.contains('is-revealed')) return;
+        gsap.to(trigger, { scale: 1, duration: 0.3, ease: 'power2.out' });
+      });
+    }
+  });
+
+  /* ============================================================
+     About — draggable polaroid photo
+     ============================================================ */
+  const aboutPhoto = $('.about-photo-img');
+  let photoDragX = 0, photoDragY = 0;
+  let photoDragging = false;
+
+  function resetPhotoDrag() {
+    if (!aboutPhoto) return;
+    photoDragX = 0; photoDragY = 0;
+    photoDragging = false;
+    aboutPhoto.classList.remove('is-dragging');
+    gsap.set(aboutPhoto, { x: 0, y: 0, scale: 1 });
+  }
+
+  if (aboutPhoto) {
+    let startX = 0, startY = 0, baseX = 0, baseY = 0;
+    let restRect = null;
+
+    aboutPhoto.addEventListener('dragstart', (e) => e.preventDefault());
+
+    aboutPhoto.addEventListener('pointerdown', (e) => {
+      photoDragging = true;
+      aboutPhoto.setPointerCapture(e.pointerId);
+      startX = e.clientX; startY = e.clientY;
+      baseX = photoDragX; baseY = photoDragY;
+      const r = aboutPhoto.getBoundingClientRect();
+      restRect = {
+        left: r.left - photoDragX, right: r.right - photoDragX,
+        top: r.top - photoDragY, bottom: r.bottom - photoDragY,
+      };
+      aboutPhoto.classList.add('is-dragging');
+      gsap.to(aboutPhoto, { scale: 1.06, duration: 0.2, ease: 'power2.out' });
+    });
+
+    aboutPhoto.addEventListener('pointermove', (e) => {
+      if (!photoDragging || !restRect) return;
+      const nx = baseX + (e.clientX - startX);
+      const ny = baseY + (e.clientY - startY);
+      const minX = -restRect.left;
+      const maxX = window.innerWidth - restRect.right;
+      const minY = -restRect.top;
+      const maxY = window.innerHeight - restRect.bottom;
+      photoDragX = Math.min(Math.max(nx, minX), maxX);
+      photoDragY = Math.min(Math.max(ny, minY), maxY);
+      gsap.set(aboutPhoto, { x: photoDragX, y: photoDragY });
+    });
+
+    const endPhotoDrag = () => {
+      if (!photoDragging) return;
+      photoDragging = false;
+      aboutPhoto.classList.remove('is-dragging');
+      if (reduceMotion) {
+        gsap.set(aboutPhoto, { scale: 1 });
+      } else {
+        gsap.to(aboutPhoto, { scale: 1, duration: 0.5, ease: 'elastic.out(1, 0.5)' });
+      }
+    };
+    aboutPhoto.addEventListener('pointerup', endPhotoDrag);
+    aboutPhoto.addEventListener('pointercancel', endPhotoDrag);
   }
 
   /* ============================================================
@@ -458,8 +634,13 @@ workEls.imgWrap.dataset.cursor = 'NEXT';
     if (route.name === 'home') window.Bow.start();
     else window.Bow.stop();
 
-    if (route.name === 'about') startAboutFloat();
-    else stopAboutFloat();
+    if (route.name === 'about') {
+      resetAboutReveal();
+      resetPhotoDrag();
+      startAboutFloat();
+    } else {
+      stopAboutFloat();
+    }
 
     projectsActive = route.name === 'projects';
     if (projectsActive) requestAnimationFrame(measureWrap);
