@@ -393,22 +393,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   flex: 1 1 auto;
   display: flex;
   align-items: stretch;
-  gap: 64px;
+  gap: 80px;
   padding: 130px var(--margin) 60px;
-   max-width: 1400px;    
+   max-width: 1500px;    
   margin: 0 auto; 
 }
 .about-col { display: flex; flex-direction: column; }
 .about-col-left {
-  flex: 0 0 clamp(260px, 26vw, 380px);
+  flex: 0 0 clamp(280px, 28vw, 400px);
   justify-content: flex-start;
   gap: 40px;
+}
+.about-software {
+  margin-top: auto;  /* 新增：把整個 Software 區塊推到欄位最下方 */
 }
 .about-col-center {
   flex: 1 1 auto;
   justify-content: center;
   min-width: 0;
-padding-left: 24px; 
+padding-left: 40px; 
 }
 .about-col-right {
   flex: 0 0 clamp(160px, 16vw, 220px);
@@ -419,7 +422,7 @@ padding-left: 24px;
 
 /* --- tagline (flower + slogan) --- */
 .about-tagline { display: flex; align-items: flex-start; gap: 14px; }
-.about-flower { width: 130px; flex: 0 0 auto; margin-top: -20px; }
+.about-flower { width: 130px; flex: 0 0 auto; margin-top: -14px; }
 .tagline-lines { display: flex; flex-direction: column; gap: 8px; }
 .tagline-line {
   font-family: var(--font-hand-tc);
@@ -443,8 +446,8 @@ padding-left: 24px;
 .about-software { position: relative; display: flex; align-items: flex-end; }
 .about-star {
   position: absolute; z-index: 0;
-  width: 130px;
-  top: -46px; left: -56px;
+  width: 150px;
+  top: -46px; left: -46px;
 }
 .about-software-body { position: relative; z-index: 1; }
 .hand-en {
@@ -491,11 +494,11 @@ padding-left: 24px;
 }
 
 /* --- badge sticker --- */
-.about-badge { width: 168px; margin-right: -14px; }
+.about-badge { width: 300px; margin-right: -14px; }
 
 /* --- contact (envelope + info) --- */
 .about-contact { display: flex; align-items: center; gap: 4px; }
-.about-envelope { width: 150px; flex: 0 0 auto; }
+.about-envelope { width: 190px; flex: 0 0 auto; }
 .about-contact-body p { font-size: 0.92rem; font-weight: 600; }
 .about-contact-body a {
   color: var(--c-text);
