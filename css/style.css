@@ -393,22 +393,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   flex: 1 1 auto;
   display: flex;
   align-items: stretch;
-  gap: 48px;
+  gap: 64px;
   padding: 130px var(--margin) 60px;
+   max-width: 1400px;    
+  margin: 0 auto; 
 }
 .about-col { display: flex; flex-direction: column; }
 .about-col-left {
-  flex: 0 0 clamp(220px, 22vw, 300px);
-  justify-content: space-between;
-  gap: 32px;
+  flex: 0 0 clamp(260px, 26vw, 380px);
+  justify-content: flex-start;
+  gap: 40px;
 }
 .about-col-center {
   flex: 1 1 auto;
   justify-content: center;
   min-width: 0;
+padding-left: 24px; 
 }
 .about-col-right {
-  flex: 0 0 clamp(200px, 20vw, 280px);
+  flex: 0 0 clamp(160px, 16vw, 220px);
   justify-content: space-between;
   align-items: flex-end;
   text-align: right;
@@ -416,7 +419,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* --- tagline (flower + slogan) --- */
 .about-tagline { display: flex; align-items: flex-start; gap: 14px; }
-.about-flower { width: 88px; flex: 0 0 auto; margin-top: -14px; }
+.about-flower { width: 130px; flex: 0 0 auto; margin-top: -20px; }
 .tagline-lines { display: flex; flex-direction: column; gap: 8px; }
 .tagline-line {
   font-family: var(--font-hand-tc);
@@ -440,13 +443,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .about-software { position: relative; display: flex; align-items: flex-end; }
 .about-star {
   position: absolute; z-index: 0;
-  width: 108px;
-  top: -34px; left: -34px;
+  width: 130px;
+  top: -46px; left: -56px;
 }
 .about-software-body { position: relative; z-index: 1; }
 .hand-en {
   font-family: var(--font-hand-en);
-  font-size: 1.7rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: var(--c-text);
   margin-bottom: 4px;
@@ -460,8 +463,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* --- intro paragraph + experience list --- */
 .about-intro-text {
   font-family: var(--font-hand-tc);
-  font-size: 1.08rem;
-  line-height: 1.95;
+  font-size: 1.15rem;
+  line-height: 2;
   color: var(--c-teal);
   max-width: 640px;
   margin-bottom: 28px;
