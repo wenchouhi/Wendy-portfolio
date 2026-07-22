@@ -35,7 +35,8 @@
       "Bash(git status *)",
       "Bash(git rebase *)",
       "Read(//tmp/**)",
-      "Bash(git merge origin/main -X ours -m ' *)"
+      "Bash(git merge origin/main -X ours -m ' *)",
+      "Bash(cd /Users/apple/Documents/portfolio_website/portfolio *)"
     ]
   }
 }

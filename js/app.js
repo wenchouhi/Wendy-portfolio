@@ -499,83 +499,109 @@ workEls.imgWrap.dataset.cursor = 'NEXT';
 
   document.querySelectorAll('.about-trigger').forEach((trigger) => {
     const name = trigger.dataset.reveal;
-    const activate = () => toggleGroup(name);
-    trigger.addEventListener('click', activate);
     trigger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleGroup(name); }
     });
     if (finePointer && !reduceMotion) {
       trigger.addEventListener('pointerover', () => {
         if (trigger.classList.contains('is-revealed')) return;
-        gsap.to(trigger, { scale: 1.08, duration: 0.3, ease: 'power2.out' });
+        gsap.to(trigger, { scale: 1.08, duration: 0.3, ease: 'power2.out', overwrite: 'auto' });
       });
       trigger.addEventListener('pointerout', () => {
         if (trigger.classList.contains('is-revealed')) return;
-        gsap.to(trigger, { scale: 1, duration: 0.3, ease: 'power2.out' });
+        gsap.to(trigger, { scale: 1, duration: 0.3, ease: 'power2.out', overwrite: 'auto' });
       });
     }
   });
 
   /* ============================================================
-     About — draggable polaroid photo
+     About — shared drag mechanism for the polaroid + the four
+     decorative objects. `handleEl` receives pointer events (and is
+     what a click/tap toggles); `targetEl` is what actually gets
+     translated — for flower/star/envelope that's the wrapper div
+     that also holds their reveal text, so dragging the icon carries
+     its text along for free, with zero separate sync logic. The
+     badge's targetEl is itself, so intro/exp (which live elsewhere
+     in the DOM) never move with it — the anchor behavior the spec
+     asks for falls out naturally from not sharing a container.
      ============================================================ */
-  const aboutPhoto = $('.about-photo-img');
-  let photoDragX = 0, photoDragY = 0;
-  let photoDragging = false;
+  const ABOUT_DRAG_THRESHOLD = 6;
+  const aboutDraggables = [];
 
-  function resetPhotoDrag() {
-    if (!aboutPhoto) return;
-    photoDragX = 0; photoDragY = 0;
-    photoDragging = false;
-    aboutPhoto.classList.remove('is-dragging');
-    gsap.set(aboutPhoto, { x: 0, y: 0, scale: 1 });
-  }
+  function initAboutDrag(handleEl, targetEl, onTap) {
+    if (!handleEl || !targetEl) return;
+    const state = { x: 0, y: 0 };
+    let dragging = false, moved = false, wasFloating = false;
+    let startX = 0, startY = 0, baseX = 0, baseY = 0, restRect = null;
 
-  if (aboutPhoto) {
-    let startX = 0, startY = 0, baseX = 0, baseY = 0;
-    let restRect = null;
+    handleEl.addEventListener('dragstart', (e) => e.preventDefault());
 
-    aboutPhoto.addEventListener('dragstart', (e) => e.preventDefault());
-
-    aboutPhoto.addEventListener('pointerdown', (e) => {
-      photoDragging = true;
-      aboutPhoto.setPointerCapture(e.pointerId);
+    handleEl.addEventListener('pointerdown', (e) => {
+      dragging = true;
+      moved = false;
+      try { handleEl.setPointerCapture(e.pointerId); } catch (err) { /* no active pointer to capture */ }
       startX = e.clientX; startY = e.clientY;
-      baseX = photoDragX; baseY = photoDragY;
-      const r = aboutPhoto.getBoundingClientRect();
+      baseX = state.x; baseY = state.y;
+      const r = targetEl.getBoundingClientRect();
       restRect = {
-        left: r.left - photoDragX, right: r.right - photoDragX,
-        top: r.top - photoDragY, bottom: r.bottom - photoDragY,
+        left: r.left - state.x, right: r.right - state.x,
+        top: r.top - state.y, bottom: r.bottom - state.y,
       };
-      aboutPhoto.classList.add('is-dragging');
-      gsap.to(aboutPhoto, { scale: 1.06, duration: 0.2, ease: 'power2.out' });
+      targetEl.classList.add('is-dragging');
+      wasFloating = aboutFloatTweens.has(handleEl);
+      if (wasFloating) killFloatFor(handleEl);
+      if (!reduceMotion) gsap.to(handleEl, { scale: 1.06, duration: 0.2, ease: 'power2.out', overwrite: 'auto' });
     });
 
-    aboutPhoto.addEventListener('pointermove', (e) => {
-      if (!photoDragging || !restRect) return;
-      const nx = baseX + (e.clientX - startX);
-      const ny = baseY + (e.clientY - startY);
+    handleEl.addEventListener('pointermove', (e) => {
+      if (!dragging || !restRect) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      if (Math.abs(dx) > ABOUT_DRAG_THRESHOLD || Math.abs(dy) > ABOUT_DRAG_THRESHOLD) moved = true;
+      const nx = baseX + dx;
+      const ny = baseY + dy;
       const minX = -restRect.left;
       const maxX = window.innerWidth - restRect.right;
       const minY = -restRect.top;
       const maxY = window.innerHeight - restRect.bottom;
-      photoDragX = Math.min(Math.max(nx, minX), maxX);
-      photoDragY = Math.min(Math.max(ny, minY), maxY);
-      gsap.set(aboutPhoto, { x: photoDragX, y: photoDragY });
+      state.x = Math.min(Math.max(nx, minX), maxX);
+      state.y = Math.min(Math.max(ny, minY), maxY);
+      gsap.set(targetEl, { x: state.x, y: state.y });
     });
 
-    const endPhotoDrag = () => {
-      if (!photoDragging) return;
-      photoDragging = false;
-      aboutPhoto.classList.remove('is-dragging');
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      targetEl.classList.remove('is-dragging');
       if (reduceMotion) {
-        gsap.set(aboutPhoto, { scale: 1 });
+        gsap.set(handleEl, { scale: 1 });
       } else {
-        gsap.to(aboutPhoto, { scale: 1, duration: 0.5, ease: 'elastic.out(1, 0.5)' });
+        gsap.to(handleEl, { scale: 1, duration: 0.5, ease: 'elastic.out(1, 0.5)', overwrite: 'auto' });
       }
+      if (wasFloating && !handleEl.classList.contains('is-revealed')) addAboutFloat(handleEl, 0);
+      if (!moved && onTap) onTap();
     };
-    aboutPhoto.addEventListener('pointerup', endPhotoDrag);
-    aboutPhoto.addEventListener('pointercancel', endPhotoDrag);
+    handleEl.addEventListener('pointerup', endDrag);
+    handleEl.addEventListener('pointercancel', endDrag);
+
+    aboutDraggables.push({
+      reset() {
+        state.x = 0; state.y = 0; dragging = false; moved = false;
+        targetEl.classList.remove('is-dragging');
+        gsap.set(targetEl, { x: 0, y: 0 });
+        gsap.set(handleEl, { scale: 1 });
+      },
+    });
+  }
+
+  initAboutDrag($('.about-flower'), $('.about-tagline'), () => toggleGroup('tagline'));
+  initAboutDrag($('.about-star'), $('.about-software'), () => toggleGroup('software'));
+  initAboutDrag($('.about-badge'), $('.about-badge'), () => toggleGroup('intro'));
+  initAboutDrag($('.about-envelope'), $('.about-contact'), () => toggleGroup('contact'));
+  initAboutDrag($('.about-photo-img'), $('.about-photo-img'), null);
+
+  function resetAllAboutDrags() {
+    aboutDraggables.forEach((d) => d.reset());
   }
 
   /* ============================================================
@@ -636,7 +662,7 @@ workEls.imgWrap.dataset.cursor = 'NEXT';
 
     if (route.name === 'about') {
       resetAboutReveal();
-      resetPhotoDrag();
+      resetAllAboutDrags();
       startAboutFloat();
     } else {
       stopAboutFloat();
