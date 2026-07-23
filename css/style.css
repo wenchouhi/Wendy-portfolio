@@ -465,7 +465,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .about-intro {
   position: absolute;
-  left: 68%; top: 22%;
+  left: 62%; top: 22%;
   display: flex; flex-direction: column;
   width: 450px;
 }
