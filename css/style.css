@@ -11,7 +11,7 @@
   --margin: 80px;
   --font-sans: "Inter", "Noto Sans TC", "PingFang TC", "Helvetica Neue", sans-serif;
   --font-hand-tc: "Klee One", "Noto Sans TC", sans-serif;
-  --font-hand-en: "Caveat", cursive;
+  --font-mono-en: "VT323", monospace;
 }
 
 @media (max-width: 1199px) { :root { --margin: 48px; } }
@@ -406,6 +406,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   visibility: hidden;
 }
 
+/* --- mobile-only persistent hint (hidden on desktop) --- */
+.about-hint { display: none; }
+
 /* --- clickable + draggable decorative objects --- */
 .about-trigger {
   cursor: grab;
@@ -421,40 +424,36 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-radius: 6px;
 }
 
-/* --- radial composition: five objects loosely arced around the photo ---
+/* --- composition: badge (photo+sticker composite) is the visual anchor,
+   center-upper and largest; flower top-left with laptop stacked below it;
+   envelope lower-center, right of the left column, below the badge.
    Fixed-width icon/text groups on a percentage grid can't avoid overlap
    through positioning alone once the reveal text is measured in — the
-   intro column and the badge/contact column are kept to bounded pixel
-   widths (not full-bleed) specifically so the math stays reconcilable
-   across the desktop range. Verified empirically at 1440/1280/1200px. */
+   intro column is kept to a bounded pixel width (not full-bleed) so the
+   math stays reconcilable across the desktop range. */
 .about-tagline {
   position: absolute;
-  left: 5%; top: 8%;
-  display: flex; align-items: flex-start; gap: 14px;
-}
-.about-photo {
-  position: absolute;
-  left: 33%; top: 5%;
-  display: flex; justify-content: center;
+  left: 4%; top: 8%;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 18px;
 }
 .about-software {
   position: absolute;
-  left: 6%; top: 47%;
-  display: flex; align-items: flex-end;
+  left: 4%; top: 48%;
+  display: flex; flex-direction: column; align-items: flex-start;
 }
 .about-badge {
   position: absolute;
-  left: 84%; top: 8%;
+  left: 32%; top: 6%;
 }
 .about-contact {
   position: absolute;
-  left: 84%; top: 55%;
-  display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+  left: 46%; top: 64%;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
 }
 
 .about-intro {
   position: absolute;
-  left: 58%; top: 8%;
+  left: 68%; top: 22%;
   display: flex; flex-direction: column;
   width: 360px;
 }
@@ -472,41 +471,22 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .tagline-line:nth-child(2) { transform: rotate(2deg); margin-left: 16px; }
 .tagline-line:nth-child(3) { transform: rotate(-1.5deg); margin-left: 4px; }
 
-/* --- polaroid photo (draggable, non-clickable focal point) --- */
-.about-photo-img {
-  position: relative; z-index: 5;
-  width: 100%; max-width: 340px;
-  transform: rotate(-4deg);
-  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.16));
-  cursor: grab;
-  touch-action: none;
-  -webkit-user-drag: none;
-  user-select: none;
-  transition: filter 0.2s ease;
-}
-.about-photo-img.is-dragging {
-  cursor: grabbing;
-  filter: drop-shadow(0 30px 42px rgba(0, 0, 0, 0.32));
-}
-
-/* --- softwares (star + list) --- */
-.about-star {
-  position: absolute; z-index: 0;
-  width: 260px;
-  top: -80px; left: -80px;
-}
-.about-software-body { position: relative; z-index: 1; pointer-events: none; }
+/* --- softwares (laptop + list, stacked so the floating icon never
+   comes close to the text below it) --- */
+.about-star { width: 230px; margin-bottom: 36px; }
+.about-software-body { position: relative; }
 .hand-en {
-  font-family: var(--font-hand-en);
-  font-size: 2.1rem;
-  font-weight: 700;
+  font-family: var(--font-mono-en);
+  font-size: 2.6rem;
+  font-weight: 400;
   color: var(--c-text);
   margin-bottom: 4px;
 }
 .about-software-body p {
-  font-size: 0.86rem;
+  font-family: var(--font-mono-en);
+  font-size: 1.4rem;
   color: var(--c-text);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* --- intro paragraph + experience list --- */
@@ -527,7 +507,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .about-exp li {
   position: relative;
   padding-left: 16px;
-  font-size: 0.85rem;
+  font-family: var(--font-hand-tc);
+  font-size: 0.92rem;
   color: var(--c-text);
   line-height: 1.6;
 }
@@ -539,12 +520,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: var(--c-text);
 }
 
-/* --- badge sticker --- */
-.about-badge { width: 230px; }
+/* --- badge (composite: "About me!" sticker + polaroid photo) ---
+   The dominant, largest object in the composition; static (no float),
+   but still draggable/clickable like the others. */
+.about-badge { width: 400px; }
 
 /* --- contact (envelope + info) --- */
-.about-envelope { width: 180px; flex: 0 0 auto; }
-.about-contact-body p { font-size: 0.92rem; font-weight: 600; }
+.about-envelope { width: 190px; flex: 0 0 auto; }
+.about-contact-body p {
+  font-family: var(--font-mono-en);
+  font-size: 1.45rem;
+  font-weight: 400;
+}
+.about-contact-body p + p { margin-top: 12px; }
 .about-contact-body a {
   color: var(--c-text);
   cursor: pointer;
@@ -560,15 +548,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .tagline-line { font-size: 0.86rem; white-space: normal; }
   .tagline-line:nth-child(2) { margin-left: 8px; }
   .tagline-line:nth-child(3) { margin-left: 0; }
-  .about-star { width: 152px; top: -46px; left: -46px; }
-  .about-photo-img { max-width: 200px; }
-  .about-badge { width: 152px; }
-  .about-envelope { width: 124px; }
-  .hand-en { font-size: 1.5rem; }
+  .about-star { width: 160px; margin-bottom: 28px; }
+  .about-badge { width: 260px; }
+  .about-envelope { width: 132px; }
+  .hand-en { font-size: 1.9rem; }
+  .about-software-body p { font-size: 1.15rem; }
   .about-intro-text { font-size: 0.98rem; line-height: 1.8; max-width: 225px; }
   .about-exp li { font-size: 0.78rem; }
   .about-exp { max-width: 225px; }
-  .about-contact-body p { font-size: 0.8rem; }
+  .about-contact-body p { font-size: 1.2rem; }
+  .about-contact-body p + p { margin-top: 10px; }
 }
 
 @media (max-width: 767px) {
@@ -578,23 +567,31 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     gap: 40px;
     min-height: 0;
   }
-  .about-tagline, .about-photo, .about-software, .about-badge, .about-contact, .about-intro {
+  .about-tagline, .about-software, .about-badge, .about-contact, .about-intro {
     position: static;
     left: auto; top: auto; right: auto; bottom: auto;
   }
+  .about-hint {
+    display: block;
+    order: -1;
+    text-align: center;
+    font-family: var(--font-hand-tc);
+    font-size: 0.95rem;
+    color: var(--c-teal);
+    margin-bottom: 4px;
+  }
   .about-badge { order: 1; align-self: center; }
   .about-tagline { order: 2; }
-  .about-photo { order: 3; }
-  .about-intro { order: 4; }
-  .about-software { order: 5; }
-  .about-contact { order: 6; }
+  .about-intro { order: 3; }
+  .about-software { order: 4; }
+  .about-contact { order: 5; }
 
   .about-tagline { justify-content: center; }
   .tagline-line { white-space: normal; }
   .about-intro { width: auto; }
-  .about-contact { flex-direction: column; align-items: center; gap: 12px; text-align: center; align-self: center; }
-  .about-software { flex-direction: column; align-items: center; text-align: center; align-self: center; }
-  .about-star { position: static; margin-bottom: 8px; }
+  .about-contact { align-items: center; gap: 12px; text-align: center; align-self: center; }
+  .about-software { align-items: center; text-align: center; align-self: center; }
+  .about-star { margin-bottom: 20px; }
   .about-intro-text, .about-exp { max-width: none; }
 }
 

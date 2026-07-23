@@ -598,7 +598,6 @@ workEls.imgWrap.dataset.cursor = 'NEXT';
   initAboutDrag($('.about-star'), $('.about-software'), () => toggleGroup('software'));
   initAboutDrag($('.about-badge'), $('.about-badge'), () => toggleGroup('intro'));
   initAboutDrag($('.about-envelope'), $('.about-contact'), () => toggleGroup('contact'));
-  initAboutDrag($('.about-photo-img'), $('.about-photo-img'), null);
 
   function resetAllAboutDrags() {
     aboutDraggables.forEach((d) => d.reset());
